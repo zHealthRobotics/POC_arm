@@ -1,0 +1,4 @@
+source;share/poc_moveit_config/local_setup.bash
+source;share/poc_moveit_config/local_setup.dsv
+source;share/poc_moveit_config/local_setup.sh
+source;share/poc_moveit_config/local_setup.zsh
