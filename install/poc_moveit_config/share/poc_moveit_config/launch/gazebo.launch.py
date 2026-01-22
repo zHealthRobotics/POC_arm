@@ -23,7 +23,11 @@ def generate_launch_description():
         'ros2_controllers_gazebo.yaml'
     ])
 
-    # Gazebo
+    world_file = PathJoinSubstitution([
+        pkg_share, 'config', 'test1.world'
+    ])
+
+    # Gazebo with saved world
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             PathJoinSubstitution([
@@ -31,7 +35,10 @@ def generate_launch_description():
                 'launch',
                 'gazebo.launch.py'
             ])
-        )
+        ),
+        launch_arguments={
+            'world': world_file
+        }.items()
     )
 
     # Robot State Publisher
@@ -46,16 +53,20 @@ def generate_launch_description():
     )
 
 
-    # Spawn robot into Gazebo
     spawn_entity = Node(
         package='gazebo_ros',
         executable='spawn_entity.py',
         output='screen',
         arguments=[
             '-topic', 'robot_description',
-            '-entity', 'my_robot'
+            '-entity', 'my_robot',
+
+            '-x', '-0.05',
+            '-y', '-0.08',
+            '-z', '0.0',
         ]
     )
+
 
     # Load controllers AFTER spawn
     load_joint_state_broadcaster = ExecuteProcess(

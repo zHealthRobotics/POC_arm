@@ -1,6 +1,7 @@
 /home/suvi/poc_arm/install/poc_arm/share/poc_arm/launch/display.launch.xml
 /home/suvi/poc_arm/install/poc_arm/share/poc_arm/rviz/urdf_config.rviz
 /home/suvi/poc_arm/install/poc_arm/share/poc_arm/urdf/poc_arm_sim.urdf.xacro
+/home/suvi/poc_arm/install/poc_arm/share/poc_arm/urdf/camera_rgbd.xacro
 /home/suvi/poc_arm/install/poc_arm/share/poc_arm/urdf/poc_arm_sim.urdf1.xacro
 /home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/shoulder_roll_link.STL
 /home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/shoulder_yaw_link.STL

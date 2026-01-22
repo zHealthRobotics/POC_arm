@@ -34,7 +34,7 @@ class YoloWorldNode(Node):
         # Stores (x, y, z) of the last message we actually sent
         self.last_published_coords = None 
         # Minimum movement required to trigger a new update (in meters)
-        self.movement_threshold = 0.05 
+        self.movement_threshold = 0.01
 
         # --- Subscribers ---
         self.create_subscription(Image, "/camera/image_raw", self.rgb_callback, 10)

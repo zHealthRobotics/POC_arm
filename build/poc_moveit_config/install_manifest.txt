@@ -32,6 +32,7 @@
 /home/suvi/poc_arm/install/poc_moveit_config/share/poc_moveit_config/config/my_robot.srdf
 /home/suvi/poc_arm/install/poc_moveit_config/share/poc_moveit_config/config/poc_ros2_control.xacro
 /home/suvi/poc_arm/install/poc_moveit_config/share/poc_moveit_config/config/moveit.rviz
+/home/suvi/poc_arm/install/poc_moveit_config/share/poc_moveit_config/config/test1.world
 /home/suvi/poc_arm/install/poc_moveit_config/share/poc_moveit_config/config/initial_positions.yaml
 /home/suvi/poc_arm/install/poc_moveit_config/share/poc_moveit_config/config/joint_limits.yaml
 /home/suvi/poc_arm/install/poc_moveit_config/share/poc_moveit_config/config/moveit_controllers.yaml
