@@ -133,7 +133,7 @@ class YoloWorldNode(Node):
                         # ==================================
 
                         cmd_msg = PoseCommand()
-                        cmd_msg.x = float(point_torso.point.x - 0.2) 
+                        cmd_msg.x = float(point_torso.point.x) 
                         cmd_msg.y = float(point_torso.point.y)
                         cmd_msg.z = float(point_torso.point.z)
                         cmd_msg.roll = 0.0
