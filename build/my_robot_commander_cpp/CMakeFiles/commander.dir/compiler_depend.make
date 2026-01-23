@@ -1379,8 +1379,15 @@ CMakeFiles/commander.dir/src/commander_template.cpp.o: /home/suvi/poc_arm/src/my
   /home/suvi/poc_arm/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/pose_command__builder.hpp \
   /home/suvi/poc_arm/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/pose_command__traits.hpp \
   /home/suvi/poc_arm/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/pose_command__type_support.hpp \
-  /home/suvi/poc_arm/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+  /home/suvi/poc_arm/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/point.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__builder.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__type_support.hpp
 
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__builder.hpp:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/point.hpp:
 
 /home/suvi/poc_arm/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp:
 
@@ -1931,6 +1938,8 @@ CMakeFiles/commander.dir/src/commander_template.cpp.o: /home/suvi/poc_arm/src/my
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
 /usr/include/x86_64-linux-gnu/bits/signal_ext.h:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__type_support.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__struct.hpp:
 

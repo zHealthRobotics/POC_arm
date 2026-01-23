@@ -1,5 +1,6 @@
 /home/suvi/poc_arm/install/my_robot_commander_cpp/lib/my_robot_commander_cpp/test_moveit
 /home/suvi/poc_arm/install/my_robot_commander_cpp/lib/my_robot_commander_cpp/commander
+/home/suvi/poc_arm/install/my_robot_commander_cpp/lib/my_robot_commander_cpp/print_current_pose
 /home/suvi/poc_arm/install/my_robot_commander_cpp/share/ament_index/resource_index/package_run_dependencies/my_robot_commander_cpp
 /home/suvi/poc_arm/install/my_robot_commander_cpp/share/ament_index/resource_index/parent_prefix_path/my_robot_commander_cpp
 /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/environment/ament_prefix_path.sh

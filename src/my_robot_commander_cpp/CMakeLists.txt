@@ -18,9 +18,16 @@ ament_target_dependencies(test_moveit rclcpp moveit_ros_planning_interface)
 add_executable(commander src/commander_template.cpp)
 ament_target_dependencies(commander rclcpp moveit_ros_planning_interface example_interfaces my_robot_interfaces)
 
+add_executable(print_current_pose src/pose_printer.cpp)
+ament_target_dependencies(print_current_pose
+  rclcpp
+  moveit_ros_planning_interface
+)
+
 install(TARGETS
   test_moveit
   commander
+  print_current_pose
   DESTINATION lib/${PROJECT_NAME}/
 )
 

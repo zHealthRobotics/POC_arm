@@ -144,18 +144,18 @@
       </link>
     </model>
     <state world_name='default'>
-      <sim_time>717 410000000</sim_time>
-      <real_time>521 146046778</real_time>
-      <wall_time>1769062453 933025761</wall_time>
-      <iterations>519554</iterations>
+      <sim_time>3061 954000000</sim_time>
+      <real_time>66 829493585</real_time>
+      <wall_time>1769164270 467438553</wall_time>
+      <iterations>65738</iterations>
       <model name='coke_can'>
-        <pose>0.328024 -0.231566 0.191998 -0.0112 0.004006 -0.058604</pose>
+        <pose>0.355118 -0.300905 0.192017 -0.011236 0.004018 -0.012117</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.328024 -0.231566 0.191998 -0.0112 0.004006 -0.058604</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.322931 0.121657 -0.919509 2.38863 0.366446 1.65517</acceleration>
-          <wrench>0.125943 0.047446 -0.358609 0 -0 0</wrench>
+          <pose>0.355118 -0.300905 0.192017 -0.011236 0.004018 -0.012117</pose>
+          <velocity>9.9e-05 -3.9e-05 -0.000293 -0.013553 -0.032113 0.000375</velocity>
+          <acceleration>0 0 -9.8 2e-06 -1e-06 -0</acceleration>
+          <wrench>0 0 -3.822 0 -0 0</wrench>
         </link>
       </model>
       <model name='ground_plane'>
@@ -169,13 +169,13 @@
         </link>
       </model>
       <model name='unit_box'>
-        <pose>0.451859 -0.021936 0.097274 -3e-06 -1.2e-05 0.001913</pose>
+        <pose>0.518351 -0.39582 0.097288 0 -1.1e-05 0.003249</pose>
         <scale>0.681374 0.552971 0.194584</scale>
         <link name='link'>
-          <pose>0.451859 -0.021936 0.097274 -3e-06 -1.2e-05 0.001913</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0.125943 -0.047446 -13.2634 1.27896 -0.414121 3.01754</acceleration>
-          <wrench>-0.125943 -0.047446 -13.2634 0 -0 0</wrench>
+          <pose>0.518351 -0.39582 0.097288 0 -1.1e-05 0.003249</pose>
+          <velocity>-0.00112 -4e-06 -0.00385 3.9e-05 -0.011508 -0</velocity>
+          <acceleration>-1.11966 -0.003763 -3.85028 0.03872 1.05812 -8e-06</acceleration>
+          <wrench>-1.11966 -0.003763 -3.85028 0 -0 0</wrench>
         </link>
       </model>
       <light name='sun'>
@@ -184,7 +184,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>-0.203772 -0.858253 2.54519 0 1.01164 1.0642</pose>
+        <pose>0.714565 -0.585399 1.00415 0 0.889797 2.58822</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>

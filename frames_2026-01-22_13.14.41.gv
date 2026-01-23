@@ -1,0 +1,15 @@
+digraph G {
+"shoulder_roll_link" -> "elbow_link"[label=" Broadcaster: default_authority\nAverage rate: 59.802\nBuffer length: 5.05\nMost recent transform: 735.056\nOldest transform: 730.006\n"];
+"shoulder_yaw_link" -> "shoulder_roll_link"[label=" Broadcaster: default_authority\nAverage rate: 59.802\nBuffer length: 5.05\nMost recent transform: 735.056\nOldest transform: 730.006\n"];
+"shoulder_base_link" -> "shoulder_pitch_link"[label=" Broadcaster: default_authority\nAverage rate: 59.802\nBuffer length: 5.05\nMost recent transform: 735.056\nOldest transform: 730.006\n"];
+"torso_link" -> "shoulder_base_link"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"shoulder_pitch_link" -> "shoulder_yaw_link"[label=" Broadcaster: default_authority\nAverage rate: 59.802\nBuffer length: 5.05\nMost recent transform: 735.056\nOldest transform: 730.006\n"];
+"wrist_yaw_link" -> "wrist_pitch_link"[label=" Broadcaster: default_authority\nAverage rate: 59.802\nBuffer length: 5.05\nMost recent transform: 735.056\nOldest transform: 730.006\n"];
+"elbow_link" -> "wrist_yaw_link"[label=" Broadcaster: default_authority\nAverage rate: 59.802\nBuffer length: 5.05\nMost recent transform: 735.056\nOldest transform: 730.006\n"];
+"wrist_pitch_link" -> "wrist_roll_link"[label=" Broadcaster: default_authority\nAverage rate: 59.802\nBuffer length: 5.05\nMost recent transform: 735.056\nOldest transform: 730.006\n"];
+"torso_link" -> "camera_link"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1769067881.2730408"[ shape=plaintext ] ;
+}->"torso_link";
+}

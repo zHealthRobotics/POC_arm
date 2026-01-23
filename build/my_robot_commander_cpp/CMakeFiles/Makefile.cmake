@@ -1343,4 +1343,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/my_robot_commander_cpp_uninstall.dir/DependInfo.cmake"
   "CMakeFiles/test_moveit.dir/DependInfo.cmake"
   "CMakeFiles/commander.dir/DependInfo.cmake"
+  "CMakeFiles/print_current_pose.dir/DependInfo.cmake"
   )

@@ -223,6 +223,19 @@ commander/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/commander.dir/build.make CMakeFiles/commander.dir/build
 .PHONY : commander/fast
 
+#=============================================================================
+# Target rules for targets named print_current_pose
+
+# Build rule for target.
+print_current_pose: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 print_current_pose
+.PHONY : print_current_pose
+
+# fast build rule for target.
+print_current_pose/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/print_current_pose.dir/build.make CMakeFiles/print_current_pose.dir/build
+.PHONY : print_current_pose/fast
+
 src/commander_template.o: src/commander_template.cpp.o
 .PHONY : src/commander_template.o
 
@@ -246,6 +259,30 @@ src/commander_template.s: src/commander_template.cpp.s
 src/commander_template.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/commander.dir/build.make CMakeFiles/commander.dir/src/commander_template.cpp.s
 .PHONY : src/commander_template.cpp.s
+
+src/pose_printer.o: src/pose_printer.cpp.o
+.PHONY : src/pose_printer.o
+
+# target to build an object file
+src/pose_printer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/print_current_pose.dir/build.make CMakeFiles/print_current_pose.dir/src/pose_printer.cpp.o
+.PHONY : src/pose_printer.cpp.o
+
+src/pose_printer.i: src/pose_printer.cpp.i
+.PHONY : src/pose_printer.i
+
+# target to preprocess a source file
+src/pose_printer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/print_current_pose.dir/build.make CMakeFiles/print_current_pose.dir/src/pose_printer.cpp.i
+.PHONY : src/pose_printer.cpp.i
+
+src/pose_printer.s: src/pose_printer.cpp.s
+.PHONY : src/pose_printer.s
+
+# target to generate assembly for a file
+src/pose_printer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/print_current_pose.dir/build.make CMakeFiles/print_current_pose.dir/src/pose_printer.cpp.s
+.PHONY : src/pose_printer.cpp.s
 
 src/test_moveit.o: src/test_moveit.cpp.o
 .PHONY : src/test_moveit.o
@@ -287,10 +324,14 @@ help:
 	@echo "... my_robot_commander_cpp_uninstall"
 	@echo "... uninstall"
 	@echo "... commander"
+	@echo "... print_current_pose"
 	@echo "... test_moveit"
 	@echo "... src/commander_template.o"
 	@echo "... src/commander_template.i"
 	@echo "... src/commander_template.s"
+	@echo "... src/pose_printer.o"
+	@echo "... src/pose_printer.i"
+	@echo "... src/pose_printer.s"
 	@echo "... src/test_moveit.o"
 	@echo "... src/test_moveit.i"
 	@echo "... src/test_moveit.s"

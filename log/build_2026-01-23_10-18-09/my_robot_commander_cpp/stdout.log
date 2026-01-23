@@ -1,0 +1,4 @@
+[35m[1mConsolidate compiler generated dependencies of target print_current_pose[0m
+[ 50%] Built target test_moveit
+[ 50%] [32mBuilding CXX object CMakeFiles/print_current_pose.dir/src/pose_printer.cpp.o[0m
+[ 83%] Built target commander

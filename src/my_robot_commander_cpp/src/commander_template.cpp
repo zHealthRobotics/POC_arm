@@ -2,6 +2,7 @@
 #include <moveit/move_group_interface/move_group_interface.h>
 #include <example_interfaces/msg/float64_multi_array.hpp>
 #include <my_robot_interfaces/msg/pose_command.hpp>
+#include <geometry_msgs/msg/point.hpp>
 
 using MoveGroupInterface = moveit::planning_interface::MoveGroupInterface;
 using FloatArray = example_interfaces::msg::Float64MultiArray;
@@ -19,10 +20,17 @@ public:
         arm_->setMaxAccelerationScalingFactor(1.0);
 
         joint_cmd_sub_ = node_->create_subscription<FloatArray>(
-            "joint_command", 10, std::bind(&Commander::jointCmdCallback, this, _1));
+            "joint_command", 10,
+            std::bind(&Commander::jointCmdCallback, this, _1));
 
         pose_cmd_sub_ = node_->create_subscription<PoseCmd>(
-            "pose_command", 10, std::bind(&Commander::poseCmdCallback, this, _1));
+            "pose_command", 10,
+            std::bind(&Commander::poseCmdCallback, this, _1));
+
+        // ✅ NEW: Position-only command subscriber
+        position_cmd_sub_ = node_->create_subscription<geometry_msgs::msg::Point>(
+            "position_command", 10,
+            std::bind(&Commander::positionCmdCallback, this, _1));
     }
 
     void goToNamedTarget(const std::string &name)
@@ -39,22 +47,31 @@ public:
         planAndExecute(arm_);
     }
 
+    // ✅ Position-only motion
+    void goToPositionTarget(double x, double y, double z)
+    {
+        arm_->setStartStateToCurrentState();
+        arm_->setPositionTarget(x, y, z);
+        planAndExecute(arm_);
+    }
+
     void goToPoseTarget(double x, double y, double z,
-                        double roll, double pitch, double yaw, bool cartesian_path = false)
+                        double roll, double pitch, double yaw,
+                        bool cartesian_path = false)
     {
         tf2::Quaternion q;
         q.setRPY(roll, pitch, yaw);
-        q = q.normalize();
+        q.normalize();
 
         geometry_msgs::msg::PoseStamped target_pose;
-        target_pose.header.frame_id = "base_link";
+        target_pose.header.frame_id = "torso_link";
         target_pose.pose.position.x = x;
         target_pose.pose.position.y = y;
         target_pose.pose.position.z = z;
-        target_pose.pose.orientation.x = q.getX();
-        target_pose.pose.orientation.y = q.getY();
-        target_pose.pose.orientation.z = q.getZ();
-        target_pose.pose.orientation.w = q.getW();
+        target_pose.pose.orientation.x = q.x();
+        target_pose.pose.orientation.y = q.y();
+        target_pose.pose.orientation.z = q.z();
+        target_pose.pose.orientation.w = q.w();
 
         arm_->setStartStateToCurrentState();
 
@@ -76,7 +93,7 @@ public:
             double fraction = arm_->computeCartesianPath(
                 waypoints, eef_step, jump_threshold, trajectory, avoid_collisions);
 
-            if (fraction == 1.0)
+            if (fraction > 0.9)
             {
                 arm_->execute(trajectory);
             }
@@ -87,7 +104,8 @@ private:
     void planAndExecute(const std::shared_ptr<MoveGroupInterface> &interface)
     {
         MoveGroupInterface::Plan plan;
-        bool success = (interface->plan(plan) == moveit::core::MoveItErrorCode::SUCCESS);
+        bool success =
+            (interface->plan(plan) == moveit::core::MoveItErrorCode::SUCCESS);
 
         if (success)
         {
@@ -97,17 +115,24 @@ private:
 
     void jointCmdCallback(const FloatArray &msg)
     {
-        auto joints = msg.data;
-
-        if (joints.size() == 7)
+        if (msg.data.size() == 7)
         {
-            goToJointTarget(joints);
+            goToJointTarget(msg.data);
         }
     }
 
     void poseCmdCallback(const PoseCmd &msg)
     {
-        goToPoseTarget(msg.x, msg.y, msg.z, msg.roll, msg.pitch, msg.yaw, msg.cartesian_path);
+        goToPoseTarget(
+            msg.x, msg.y, msg.z,
+            msg.roll, msg.pitch, msg.yaw,
+            msg.cartesian_path);
+    }
+
+    // ✅ NEW: Position command callback
+    void positionCmdCallback(const geometry_msgs::msg::Point &msg)
+    {
+        goToPositionTarget(msg.x, msg.y, msg.z);
     }
 
     std::shared_ptr<rclcpp::Node> node_;
@@ -115,6 +140,7 @@ private:
 
     rclcpp::Subscription<FloatArray>::SharedPtr joint_cmd_sub_;
     rclcpp::Subscription<PoseCmd>::SharedPtr pose_cmd_sub_;
+    rclcpp::Subscription<geometry_msgs::msg::Point>::SharedPtr position_cmd_sub_;
 };
 
 int main(int argc, char **argv)

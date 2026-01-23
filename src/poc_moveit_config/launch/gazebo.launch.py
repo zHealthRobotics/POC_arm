@@ -1,15 +1,25 @@
+import os
 from launch import LaunchDescription
-from launch.actions import ExecuteProcess, IncludeLaunchDescription, RegisterEventHandler
+from launch.actions import ExecuteProcess, IncludeLaunchDescription, RegisterEventHandler, SetEnvironmentVariable
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 from launch.substitutions import Command, PathJoinSubstitution
 from launch_ros.substitutions import FindPackageShare
 from launch.event_handlers import OnProcessExit
 
-
 def generate_launch_description():
 
     pkg_share = FindPackageShare('poc_moveit_config')
+    
+    gazebo_model_path = SetEnvironmentVariable(
+        name='GAZEBO_MODEL_PATH',
+        value=os.pathsep.join([
+            os.environ.get('GAZEBO_MODEL_PATH', ''),
+            str(PathJoinSubstitution([
+                FindPackageShare('poc_arm')
+            ]))
+        ])
+    )    
 
     urdf_xacro = PathJoinSubstitution([
         pkg_share,
@@ -88,6 +98,7 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
+        gazebo_model_path,
         gazebo,
         robot_state_publisher,
         spawn_entity,

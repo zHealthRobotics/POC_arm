@@ -33,7 +33,7 @@
       <origin xyz="0 0 0.25" rpy="0 0 0"/>
       <geometry>
         <!-- size = X Y Z -->
-        <box size="0.1 0.15 0.50"/>
+        <box size="0.06 0.10 0.50"/>
       </geometry>
       <material name="torso_color">
         <color rgba="1 0.71 0.75 1"/>
@@ -43,14 +43,14 @@
     <collision>
       <origin xyz="0 0 0.25" rpy="0 0 0"/>
       <geometry>
-        <box size="0.1 0.15 0.50"/>
+        <box size="0.06 0.10 0.50"/>
       </geometry>
     </collision>
   </link>
 
   <xacro:rgbd_camera
     parent="torso_link"
-    xyz="0.075 0 0.47"
+    xyz="0.065 0 0.47"
     rpy="0 0.4 0"/>
 
   <link
@@ -75,7 +75,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="${poc_arm_pkg}/meshes/shoulder_base_link.STL" />
+          filename="file:///home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/shoulder_base_link.STL" />
       </geometry>
       <material name="grey"/>
     </visual>
@@ -85,7 +85,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="${poc_arm_pkg}/meshes/shoulder_base_link.STL" />
+          filename="file:///home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/shoulder_base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -95,7 +95,7 @@
     <parent link="torso_link"/>
     <child link="shoulder_base_link"/>
     <!-- adjust this offset to place your arm on top of torso -->
-    <origin xyz="0 -0.06 0.45" rpy="0 0 0"/>
+    <origin xyz="0 -0.06 0.4" rpy="0 0 0"/>
   </joint>
   
   <link
@@ -120,7 +120,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="${poc_arm_pkg}/meshes/shoulder_pitch_link.STL" />
+          filename="file:///home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/shoulder_pitch_link.STL" />
       </geometry>
       <material name="blue"/>
     </visual>
@@ -130,7 +130,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="${poc_arm_pkg}/meshes/shoulder_pitch_link.STL" />
+          filename="file:///home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/shoulder_pitch_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -174,7 +174,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="${poc_arm_pkg}/meshes/shoulder_yaw_link.STL" />
+          filename="file:///home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/shoulder_yaw_link.STL" />
       </geometry>
       <material name="green"/>
     </visual>
@@ -184,7 +184,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="${poc_arm_pkg}/meshes/shoulder_yaw_link.STL" />
+          filename="file:///home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/shoulder_yaw_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -228,7 +228,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="${poc_arm_pkg}/meshes/shoulder_roll_link.STL" />
+          filename="file:///home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/shoulder_roll_link.STL" />
       </geometry>
       <material name="grey"/>
     </visual>
@@ -238,7 +238,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="${poc_arm_pkg}/meshes/shoulder_roll_link.STL" />
+          filename="file:///home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/shoulder_roll_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -282,7 +282,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="${poc_arm_pkg}/meshes/elbow_link.STL" />
+          filename="file:///home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/elbow_link.STL" />
       </geometry>
       <material name="blue"/>
     </visual>
@@ -292,7 +292,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="${poc_arm_pkg}/meshes/elbow_link.STL" />
+          filename="file:///home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/elbow_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -336,7 +336,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="${poc_arm_pkg}/meshes/wrist_yaw_link.STL" />
+          filename="file:///home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/wrist_yaw_link.STL" />
       </geometry>
       <material name="green"/>
     </visual>
@@ -346,7 +346,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="${poc_arm_pkg}/meshes/wrist_yaw_link.STL" />
+          filename="file:///home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/wrist_yaw_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -390,7 +390,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="${poc_arm_pkg}/meshes/wrist_pitch_link.STL" />
+          filename="file:///home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/wrist_pitch_link.STL" />
       </geometry>
       <material name="grey"/>
     </visual>
@@ -400,7 +400,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="${poc_arm_pkg}/meshes/wrist_pitch_link.STL" />
+          filename="file:///home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/wrist_pitch_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -444,7 +444,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="${poc_arm_pkg}/meshes/wrist_roll_link.STL" />
+          filename="file:///home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/wrist_roll_link.STL" />
       </geometry>
       <material name="blue"/>
     </visual>
@@ -454,7 +454,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="${poc_arm_pkg}/meshes/wrist_roll_link.STL" />
+          filename="file:///home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/wrist_roll_link.STL" />
       </geometry>
     </collision>
   </link>
