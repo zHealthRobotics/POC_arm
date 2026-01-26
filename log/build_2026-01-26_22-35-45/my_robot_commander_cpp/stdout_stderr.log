@@ -1,0 +1,12 @@
+[35m[1mConsolidate compiler generated dependencies of target task_manager[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/task_manager.dir/src/task_manager.cpp.o[0m
+[ 37%] Built target print_current_pose
+[ 62%] Built target test_moveit
+[ 87%] Built target commander
+[01m[K/home/suvi/poc_arm/src/my_robot_commander_cpp/src/task_manager.cpp:2:10:[m[K [01;31m[Kfatal error: [m[Krclcpp_action/rclcpp_action.hpp: No such file or directory
+    2 | #include [01;31m[K<rclcpp_action/rclcpp_action.hpp>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/task_manager.dir/build.make:76: CMakeFiles/task_manager.dir/src/task_manager.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:221: CMakeFiles/task_manager.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -236,6 +236,19 @@ print_current_pose/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/print_current_pose.dir/build.make CMakeFiles/print_current_pose.dir/build
 .PHONY : print_current_pose/fast
 
+#=============================================================================
+# Target rules for targets named task_manager
+
+# Build rule for target.
+task_manager: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 task_manager
+.PHONY : task_manager
+
+# fast build rule for target.
+task_manager/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task_manager.dir/build.make CMakeFiles/task_manager.dir/build
+.PHONY : task_manager/fast
+
 src/commander_template.o: src/commander_template.cpp.o
 .PHONY : src/commander_template.o
 
@@ -284,6 +297,30 @@ src/pose_printer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/print_current_pose.dir/build.make CMakeFiles/print_current_pose.dir/src/pose_printer.cpp.s
 .PHONY : src/pose_printer.cpp.s
 
+src/task_manager.o: src/task_manager.cpp.o
+.PHONY : src/task_manager.o
+
+# target to build an object file
+src/task_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task_manager.dir/build.make CMakeFiles/task_manager.dir/src/task_manager.cpp.o
+.PHONY : src/task_manager.cpp.o
+
+src/task_manager.i: src/task_manager.cpp.i
+.PHONY : src/task_manager.i
+
+# target to preprocess a source file
+src/task_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task_manager.dir/build.make CMakeFiles/task_manager.dir/src/task_manager.cpp.i
+.PHONY : src/task_manager.cpp.i
+
+src/task_manager.s: src/task_manager.cpp.s
+.PHONY : src/task_manager.s
+
+# target to generate assembly for a file
+src/task_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task_manager.dir/build.make CMakeFiles/task_manager.dir/src/task_manager.cpp.s
+.PHONY : src/task_manager.cpp.s
+
 src/test_moveit.o: src/test_moveit.cpp.o
 .PHONY : src/test_moveit.o
 
@@ -325,6 +362,7 @@ help:
 	@echo "... uninstall"
 	@echo "... commander"
 	@echo "... print_current_pose"
+	@echo "... task_manager"
 	@echo "... test_moveit"
 	@echo "... src/commander_template.o"
 	@echo "... src/commander_template.i"
@@ -332,6 +370,9 @@ help:
 	@echo "... src/pose_printer.o"
 	@echo "... src/pose_printer.i"
 	@echo "... src/pose_printer.s"
+	@echo "... src/task_manager.o"
+	@echo "... src/task_manager.i"
+	@echo "... src/task_manager.s"
 	@echo "... src/test_moveit.o"
 	@echo "... src/test_moveit.i"
 	@echo "... src/test_moveit.s"

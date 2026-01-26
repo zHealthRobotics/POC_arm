@@ -1382,8 +1382,15 @@ CMakeFiles/commander.dir/src/commander_template.cpp.o: /home/suvi/poc_arm/src/my
   /home/suvi/poc_arm/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp \
   /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/point.hpp \
   /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__builder.hpp \
-  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__type_support.hpp
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__type_support.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/bool.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__struct.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__builder.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__traits.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__type_support.hpp
 
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__type_support.hpp:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__builder.hpp:
 
@@ -1631,6 +1638,8 @@ CMakeFiles/commander.dir/src/commander_template.cpp.o: /home/suvi/poc_arm/src/my
 
 /opt/ros/humble/include/moveit_msgs/moveit_msgs/msg/detail/planner_interface_description__type_support.hpp:
 
+/opt/ros/humble/include/std_msgs/std_msgs/msg/bool.hpp:
+
 /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_status__struct.h:
 
 /opt/ros/humble/include/moveit_msgs/moveit_msgs/msg/detail/planner_interface_description__traits.hpp:
@@ -1650,6 +1659,8 @@ CMakeFiles/commander.dir/src/commander_template.cpp.o: /home/suvi/poc_arm/src/my
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/wrench__traits.hpp:
 
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/multi_dof_joint_state__traits.hpp:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__traits.hpp:
 
 /opt/ros/humble/include/moveit_msgs/moveit_msgs/msg/detail/robot_state__traits.hpp:
 
@@ -1930,6 +1941,8 @@ CMakeFiles/commander.dir/src/commander_template.cpp.o: /home/suvi/poc_arm/src/my
 /usr/include/c++/11/optional:
 
 /usr/include/x86_64-linux-gnu/bits/sigstksz.h:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__struct.hpp:
 
 /usr/include/c++/11/condition_variable:
 
@@ -4076,6 +4089,8 @@ CMakeFiles/commander.dir/src/commander_template.cpp.o: /home/suvi/poc_arm/src/my
 /usr/include/eigen3/Eigen/src/Geometry/Quaternion.h:
 
 /usr/include/eigen3/Eigen/src/Geometry/AngleAxis.h:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__builder.hpp:
 
 /usr/include/boost/mpl/aux_/config/gcc.hpp:
 

@@ -1301,4 +1301,9 @@ CMakeFiles/commander.dir/src/commander_template.cpp.o: \
  /home/suvi/poc_arm/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/point.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__builder.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__type_support.hpp
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__type_support.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/bool.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__struct.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__builder.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__traits.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__type_support.hpp

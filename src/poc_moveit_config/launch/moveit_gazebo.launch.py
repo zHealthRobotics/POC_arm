@@ -64,11 +64,22 @@ def generate_launch_description():
             {"use_sim_time": True},
         ],
     )
+    
+    task_manager_node = Node(
+        package="my_robot_commander_cpp",
+        executable="task_manager",
+        output="screen",
+        parameters=[
+            {"use_sim_time": True},
+        ],
+    )
+    
 
     return LaunchDescription([
         gazebo_launch,
         move_group_node,
         rviz_node,
         commander_node,   # ✅ add this
+        #task_manager_node,
     ])
 

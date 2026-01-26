@@ -3,6 +3,8 @@
 #include <example_interfaces/msg/float64_multi_array.hpp>
 #include <my_robot_interfaces/msg/pose_command.hpp>
 #include <geometry_msgs/msg/point.hpp>
+#include <std_msgs/msg/bool.hpp>
+
 
 using MoveGroupInterface = moveit::planning_interface::MoveGroupInterface;
 using FloatArray = example_interfaces::msg::Float64MultiArray;
@@ -31,6 +33,9 @@ public:
         position_cmd_sub_ = node_->create_subscription<geometry_msgs::msg::Point>(
             "position_command", 10,
             std::bind(&Commander::positionCmdCallback, this, _1));
+            
+        execution_done_pub_ = node_->create_publisher<std_msgs::msg::Bool>("/commander/execution_done", 10);
+    
     }
 
     void goToNamedTarget(const std::string &name)
@@ -95,7 +100,10 @@ public:
 
             if (fraction > 0.9)
             {
-                arm_->execute(trajectory);
+                arm_->execute(trajectory);            
+                std_msgs::msg::Bool msg;
+                msg.data = true;
+                execution_done_pub_->publish(msg);    
             }
         }
     }
@@ -110,6 +118,9 @@ private:
         if (success)
         {
             interface->execute(plan);
+            std_msgs::msg::Bool msg;
+            msg.data = true;
+            execution_done_pub_->publish(msg);
         }
     }
 
@@ -141,6 +152,8 @@ private:
     rclcpp::Subscription<FloatArray>::SharedPtr joint_cmd_sub_;
     rclcpp::Subscription<PoseCmd>::SharedPtr pose_cmd_sub_;
     rclcpp::Subscription<geometry_msgs::msg::Point>::SharedPtr position_cmd_sub_;
+    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr execution_done_pub_;
+
 };
 
 int main(int argc, char **argv)

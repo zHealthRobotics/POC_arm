@@ -23,20 +23,25 @@ class YoloWorldNode(Node):
         self.model = YOLO("yolov8s-world.pt")
 
         self.model.set_classes([
-            "drink can", "beverage container", "cup", "glass", "bottle", "human face"
+            "drink can", "beverage container", "glass", "bottle", "human face"
         ])
 
         self.bridge = CvBridge()
+        self.stable_count = 0
+        self.required_stable_frames = 5
 
         # Initialize variables
         self.depth_image = None 
         self.fx = self.fy = self.cx = self.cy = None
 
         # --- NEW: State for Change Detection ---
-        # Stores (x, y, z) of the last message we actually sent
         self.last_published_coords = None 
-        # Minimum movement required to trigger a new update (in meters)
         self.movement_threshold = 0.01
+        
+        # --- CAMERA TILT SETTING ---
+        # Camera is pitched DOWN by 0.4 radians.
+        # To correct this, we rotate the point UP (Positive Pitch) by 0.4 rad.
+        self.camera_tilt = 0.45
         
         self.tf_buffer = tf2_ros.Buffer()
         self.tf_listener = tf2_ros.TransformListener(self.tf_buffer, self)
@@ -47,10 +52,10 @@ class YoloWorldNode(Node):
         self.create_subscription(CameraInfo, "/camera/camera_info", self.camera_info_callback, 10)
 
         # --- Publisher ---
-        self.pose_pub = self.create_publisher(PoseCommand, "/pose_command", 10)
+        self.pose_pub = self.create_publisher(PoseCommand, "/detected_target_pose", 10)
         self.debug_img_pub = self.create_publisher(Image, "/yolo/debug_image", 10)
 
-        self.get_logger().info("YOLO-World node ready (Update-on-Change mode)")
+        self.get_logger().info("YOLO-World node ready (with 0.4 rad Tilt Correction)")
 
     # ----------------- Callbacks -----------------
 
@@ -67,7 +72,7 @@ class YoloWorldNode(Node):
             self.get_logger().error(f"Depth convert error: {e}")
 
     def rgb_callback(self, msg):
-        self.get_logger().info("RGB CALLBACK HIT")
+        # self.get_logger().info("RGB CALLBACK HIT")
         if self.depth_image is None or self.fx is None:
             return
 
@@ -78,7 +83,7 @@ class YoloWorldNode(Node):
             self.get_logger().error(f"RGB convert error: {e}")
             return
 
-        results = self.model.predict(source=frame, conf=0.3, verbose=False)
+        results = self.model.predict(source=frame, conf=0.1, verbose=False)
 
         if len(results[0].boxes) > 0:
             box = results[0].boxes[0]
@@ -96,10 +101,35 @@ class YoloWorldNode(Node):
 
                 if depth > 0 and not np.isnan(depth):
 
-                    # --- CAMERA FRAME COORDINATES ---
-                    Y = (u - self.cx) * depth / self.fx
-                    Z = (v - self.cy) * depth / self.fy
-                    X = depth
+                    # 1. Raw Optical Coordinates (X=Right, Y=Down, Z=Forward)
+                    # Note: These are relative to the TILTED lens
+                    Y_optical = (u - self.cy) * depth / self.fy # Actually -X in robot frame usually
+                    X_optical = (v - self.cx) * depth / self.fx # Actually -Y in robot frame usually
+                    Z_optical = depth
+
+                    # 2. Convert to Standard "Camera Link" Frame (X=Forward, Y=Left, Z=Up)
+                    # But BEFORE tilt correction.
+                    # Standard conversion:
+                    # Robot X (Forward) = Optical Z
+                    # Robot Y (Left)    = -Optical X (Right)
+                    # Robot Z (Up)      = -Optical Y (Down)
+                    
+                    x_cam = Z_optical
+                    y_cam = -((u - self.cx) * depth / self.fx) # Corrected Left/Right
+                    z_cam = -((v - self.cy) * depth / self.fy) # Corrected Up/Down
+
+                    # 3. Apply Tilt Correction (Rotation around Y-axis)
+                    # If camera looks DOWN 0.4 rad, we rotate points UP 0.4 rad
+                    theta = self.camera_tilt
+                    
+                    # Rotation Matrix for Pitch around Y axis:
+                    # [ cos  0  sin ]
+                    # [  0   1   0  ]
+                    # [-sin  0  cos ]
+                    
+                    x_corrected = x_cam * math.cos(theta) + z_cam * math.sin(theta)
+                    y_corrected = y_cam
+                    z_corrected = -x_cam * math.sin(theta) + z_cam * math.cos(theta)
 
                     # --- CHANGE DETECTION ---
                     should_publish = False
@@ -107,19 +137,24 @@ class YoloWorldNode(Node):
                         should_publish = True
                     else:
                         lx, ly, lz = self.last_published_coords
-                        dist = math.sqrt((X-lx)**2 + (Y-ly)**2 + (Z-lz)**2)
+                        dist = math.sqrt((x_corrected-lx)**2 + (y_corrected-ly)**2 + (z_corrected-lz)**2)
                         if dist > self.movement_threshold:
                             should_publish = True
 
                     if should_publish:
+                        self.stable_count += 1
+                    else:
+                        self.stable_count = 0
 
-                        # ===== TF TRANSFORM (NEW PART) =====
+                    if self.stable_count >= self.required_stable_frames:
+
+                        # ===== TF TRANSFORM =====
                         point_cam = PointStamped()
-                        point_cam.header.frame_id = "camera_link"
+                        point_cam.header.frame_id = "camera_link"  # Camera frame (leveled)
                         point_cam.header.stamp = self.get_clock().now().to_msg()
-                        point_cam.point.x = X
-                        point_cam.point.y = Y
-                        point_cam.point.z = Z
+                        point_cam.point.x = x_corrected
+                        point_cam.point.y = y_corrected
+                        point_cam.point.z = z_corrected
 
                         try:
                             point_torso = self.tf_buffer.transform(
@@ -130,24 +165,27 @@ class YoloWorldNode(Node):
                         except Exception as e:
                             self.get_logger().warn(f"TF transform failed: {e}")
                             return
-                        # ==================================
+                        # =========================
 
                         cmd_msg = PoseCommand()
-                        cmd_msg.x = float(point_torso.point.x) 
-                        cmd_msg.y = float(point_torso.point.y)
-                        cmd_msg.z = float(point_torso.point.z)
+                        cmd_msg.x = float((point_torso.point.x)+0.05)
+                        cmd_msg.y = float(point_torso.point.y - 0.01)
+                        cmd_msg.z = float(point_torso.point.z + 0.07)
                         cmd_msg.roll = 0.0
                         cmd_msg.pitch = 0.0
                         cmd_msg.yaw = 0.0
-                        cmd_msg.cartesian_path = False
+                        cmd_msg.cartesian_path = False  # ALWAYS false in YOLO
 
                         self.pose_pub.publish(cmd_msg)
-                        self.last_published_coords = (X, Y, Z)
+
+                        self.last_published_coords = (x_corrected, y_corrected, z_corrected)
+                        self.stable_count = 0  # reset after publish
 
                         self.get_logger().info(
-                            f"Published (torso_link): "
+                            f"Published STABLE target (torso_link): "
                             f"[{cmd_msg.x:.2f}, {cmd_msg.y:.2f}, {cmd_msg.z:.2f}]"
                         )
+
 
         # Debug image
         annotated = results[0].plot()

@@ -1,0 +1,12 @@
+[ 12%] [32mBuilding CXX object CMakeFiles/task_manager.dir/src/task_manager.cpp.o[0m
+[ 37%] Built target commander
+[ 62%] Built target test_moveit
+[ 87%] Built target print_current_pose
+[01m[K/home/suvi/poc_arm/src/my_robot_commander_cpp/src/task_manager.cpp:[m[K In constructor ‘[01m[KTaskManager::TaskManager()[m[K’:
+[01m[K/home/suvi/poc_arm/src/my_robot_commander_cpp/src/task_manager.cpp:26:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass TaskManager[m[K’ has no member named ‘[01m[Kcreate_timer[m[K’; did you mean ‘[01m[Kcreate_wall_timer[m[K’?
+   26 |         timer_ = this->[01;31m[Kcreate_timer[m[K(
+      |                        [01;31m[K^~~~~~~~~~~~[m[K
+      |                        [32m[Kcreate_wall_timer[m[K
+gmake[2]: *** [CMakeFiles/task_manager.dir/build.make:76: CMakeFiles/task_manager.dir/src/task_manager.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:221: CMakeFiles/task_manager.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

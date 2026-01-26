@@ -11,6 +11,8 @@ find_package(rclcpp REQUIRED)
 find_package(moveit_ros_planning_interface REQUIRED)
 find_package(example_interfaces REQUIRED)
 find_package(my_robot_interfaces REQUIRED)
+find_package(rclcpp_action REQUIRED)
+find_package(moveit_msgs REQUIRED)
 
 add_executable(test_moveit src/test_moveit.cpp)
 ament_target_dependencies(test_moveit rclcpp moveit_ros_planning_interface)
@@ -24,10 +26,14 @@ ament_target_dependencies(print_current_pose
   moveit_ros_planning_interface
 )
 
+add_executable(task_manager src/task_manager.cpp)
+ament_target_dependencies(task_manager rclcpp my_robot_interfaces rclcpp_action moveit_msgs)
+
 install(TARGETS
   test_moveit
   commander
   print_current_pose
+  task_manager
   DESTINATION lib/${PROJECT_NAME}/
 )
 

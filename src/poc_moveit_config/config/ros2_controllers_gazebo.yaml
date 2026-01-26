@@ -18,6 +18,7 @@ arm_controller:
       - wrist_yaw_joint
       - wrist_pitch_joint
       - wrist_roll_joint
+      
     command_interfaces:
       - position
     state_interfaces:

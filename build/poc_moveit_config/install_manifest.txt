@@ -29,6 +29,7 @@
 /home/suvi/poc_arm/install/poc_moveit_config/share/poc_moveit_config/config/ros2_controllers_gazebo.yaml
 /home/suvi/poc_arm/install/poc_moveit_config/share/poc_moveit_config/config/my_robot.urdf.xacro
 /home/suvi/poc_arm/install/poc_moveit_config/share/poc_moveit_config/config/my_robot.ros2_control.xacro
+/home/suvi/poc_arm/install/poc_moveit_config/share/poc_moveit_config/config/test2.world
 /home/suvi/poc_arm/install/poc_moveit_config/share/poc_moveit_config/config/my_robot.srdf
 /home/suvi/poc_arm/install/poc_moveit_config/share/poc_moveit_config/config/poc_ros2_control.xacro
 /home/suvi/poc_arm/install/poc_moveit_config/share/poc_moveit_config/config/moveit.rviz

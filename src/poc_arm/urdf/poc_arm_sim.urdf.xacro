@@ -22,7 +22,7 @@
   <link name="torso_link">
     <inertial>
       <origin xyz="0 0 0.25" rpy="0 0 0"/>
-      <mass value="25"/>
+      <mass value="250"/>
       <inertia
         ixx="0.2" ixy="0.0" ixz="0.0"
         iyy="0.2" iyz="0.0"
@@ -50,8 +50,8 @@
 
   <xacro:rgbd_camera
     parent="torso_link"
-    xyz="0.065 0 0.47"
-    rpy="0 0.4 0"/>
+    xyz="0.015 0 0.75"
+    rpy="0 0.45 0"/>
 
   <link
     name="shoulder_base_link">

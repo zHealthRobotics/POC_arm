@@ -1,0 +1,13 @@
+[0.007s] Invoking command in '/home/suvi/poc_arm/build/my_robot_commander_cpp': CMAKE_PREFIX_PATH=/home/suvi/poc_arm/install/my_robot_interfaces:/home/suvi/poc_arm/install/realsense_gazebo:/home/suvi/poc_arm/install/poc_moveit_config:/home/suvi/poc_arm/install/poc_arm:/home/suvi/poc_arm/install/my_robot_commander_cpp:/opt/ros/humble LD_LIBRARY_PATH=/home/suvi/poc_arm/install/my_robot_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --build /home/suvi/poc_arm/build/my_robot_commander_cpp -- -j12 -l12
+[0.048s] [ 12%] [32mBuilding CXX object CMakeFiles/task_manager.dir/src/task_manager.cpp.o[0m
+[0.051s] [ 37%] Built target print_current_pose
+[0.056s] [ 62%] Built target test_moveit
+[0.057s] [ 87%] Built target commander
+[0.149s] [01m[K/home/suvi/poc_arm/src/my_robot_commander_cpp/src/task_manager.cpp:2:10:[m[K [01;31m[Kfatal error: [m[Krclcpp_action/rclcpp_action.hpp: No such file or directory
+[0.149s]     2 | #include [01;31m[K<rclcpp_action/rclcpp_action.hpp>[m[K
+[0.149s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.149s] compilation terminated.
+[0.158s] gmake[2]: *** [CMakeFiles/task_manager.dir/build.make:76: CMakeFiles/task_manager.dir/src/task_manager.cpp.o] Error 1
+[0.159s] gmake[1]: *** [CMakeFiles/Makefile2:221: CMakeFiles/task_manager.dir/all] Error 2
+[0.159s] gmake: *** [Makefile:146: all] Error 2
+[0.161s] Invoked command in '/home/suvi/poc_arm/build/my_robot_commander_cpp' returned '2': CMAKE_PREFIX_PATH=/home/suvi/poc_arm/install/my_robot_interfaces:/home/suvi/poc_arm/install/realsense_gazebo:/home/suvi/poc_arm/install/poc_moveit_config:/home/suvi/poc_arm/install/poc_arm:/home/suvi/poc_arm/install/my_robot_commander_cpp:/opt/ros/humble LD_LIBRARY_PATH=/home/suvi/poc_arm/install/my_robot_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --build /home/suvi/poc_arm/build/my_robot_commander_cpp -- -j12 -l12

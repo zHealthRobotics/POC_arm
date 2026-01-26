@@ -6,6 +6,7 @@ from launch_ros.actions import Node
 from launch.substitutions import Command, PathJoinSubstitution
 from launch_ros.substitutions import FindPackageShare
 from launch.event_handlers import OnProcessExit
+from launch_ros.parameter_descriptions import ParameterValue
 
 def generate_launch_description():
 
@@ -34,7 +35,7 @@ def generate_launch_description():
     ])
 
     world_file = PathJoinSubstitution([
-        pkg_share, 'config', 'test1.world'
+        pkg_share, 'config', 'test2.world'
     ])
 
     # Gazebo with saved world
@@ -58,9 +59,13 @@ def generate_launch_description():
         output='screen',
         parameters=[{
             'use_sim_time': True,
-            'robot_description': Command(['xacro ', urdf_xacro])
+            'robot_description': ParameterValue(
+                Command(['xacro ', urdf_xacro]),
+                value_type=str
+            )
         }]
     )
+
 
 
     spawn_entity = Node(
