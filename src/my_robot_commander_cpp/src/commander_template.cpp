@@ -98,7 +98,7 @@ public:
             double fraction = arm_->computeCartesianPath(
                 waypoints, eef_step, jump_threshold, trajectory, avoid_collisions);
 
-            if (fraction > 0.9)
+            if (fraction > 0.5)
             {
                 arm_->execute(trajectory);            
                 std_msgs::msg::Bool msg;

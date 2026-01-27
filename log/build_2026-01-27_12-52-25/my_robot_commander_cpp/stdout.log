@@ -1,0 +1,5 @@
+[35m[1mConsolidate compiler generated dependencies of target commander[0m
+[ 12%] [32mBuilding CXX object CMakeFiles/task_manager.dir/src/task_manager.cpp.o[0m
+[ 37%] Built target print_current_pose
+[ 62%] Built target test_moveit
+[ 87%] Built target commander

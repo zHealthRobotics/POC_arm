@@ -691,6 +691,16 @@ CMakeFiles/task_manager.dir/src/task_manager.cpp.o: /home/suvi/poc_arm/src/my_ro
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__traits.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__type_support.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
+  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/float64_multi_array.hpp \
+  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/float64_multi_array__struct.hpp \
+  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/multi_array_layout__struct.hpp \
+  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/multi_array_dimension__struct.hpp \
+  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/float64_multi_array__builder.hpp \
+  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/float64_multi_array__traits.hpp \
+  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/multi_array_layout__traits.hpp \
+  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/multi_array_dimension__traits.hpp \
+  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/float64_multi_array__type_support.hpp \
+  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp \
   /home/suvi/poc_arm/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/pose_command.hpp \
   /home/suvi/poc_arm/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/pose_command__struct.hpp \
   /home/suvi/poc_arm/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/pose_command__builder.hpp \
@@ -706,6 +716,18 @@ CMakeFiles/task_manager.dir/src/task_manager.cpp.o: /home/suvi/poc_arm/src/my_ro
 /home/suvi/poc_arm/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/pose_command__builder.hpp:
 
 /home/suvi/poc_arm/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/pose_command.hpp:
+
+/opt/ros/humble/include/example_interfaces/example_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp:
+
+/opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/float64_multi_array__type_support.hpp:
+
+/opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/multi_array_dimension__traits.hpp:
+
+/opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/multi_array_dimension__struct.hpp:
+
+/opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/float64_multi_array__struct.hpp:
+
+/opt/ros/humble/include/example_interfaces/example_interfaces/msg/float64_multi_array.hpp:
 
 /opt/ros/humble/include/std_msgs/std_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
 
@@ -758,6 +780,8 @@ CMakeFiles/task_manager.dir/src/task_manager.cpp.o: /home/suvi/poc_arm/src/my_ro
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__builder.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__struct.hpp:
+
+/opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/float64_multi_array__traits.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/get_parameter_types.hpp:
 
@@ -878,6 +902,8 @@ CMakeFiles/task_manager.dir/src/task_manager.cpp.o: /home/suvi/poc_arm/src/my_ro
 /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/metric_details_interface.hpp:
 
 /opt/ros/humble/include/rcpputils/rcpputils/thread_safety_annotations.hpp:
+
+/opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/float64_multi_array__builder.hpp:
 
 /usr/include/c++/11/pstl/glue_numeric_defs.h:
 
@@ -1419,6 +1445,8 @@ CMakeFiles/task_manager.dir/src/task_manager.cpp.o: /home/suvi/poc_arm/src/my_ro
 
 /opt/ros/humble/include/rcpputils/rcpputils/join.hpp:
 
+/opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/multi_array_layout__traits.hpp:
+
 /opt/ros/humble/include/tracetools/tracetools/config.h:
 
 /usr/include/c++/11/debug/assertions.h:
@@ -1760,6 +1788,8 @@ CMakeFiles/task_manager.dir/src/task_manager.cpp.o: /home/suvi/poc_arm/src/my_ro
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/set_parameters.hpp:
 
 /opt/ros/humble/include/rcl/rcl/visibility_control.h:
+
+/opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/multi_array_layout__struct.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/service.hpp:
 

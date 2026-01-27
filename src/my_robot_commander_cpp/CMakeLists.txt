@@ -27,7 +27,7 @@ ament_target_dependencies(print_current_pose
 )
 
 add_executable(task_manager src/task_manager.cpp)
-ament_target_dependencies(task_manager rclcpp my_robot_interfaces rclcpp_action moveit_msgs)
+ament_target_dependencies(task_manager rclcpp my_robot_interfaces rclcpp_action moveit_msgs example_interfaces)
 
 install(TARGETS
   test_moveit

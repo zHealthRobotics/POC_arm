@@ -95,7 +95,7 @@
     <parent link="torso_link"/>
     <child link="shoulder_base_link"/>
     <!-- adjust this offset to place your arm on top of torso -->
-    <origin xyz="0 -0.06 0.4" rpy="0 0 0"/>
+    <origin xyz="0 -0.06 0.45" rpy="0 0 0"/>
   </joint>
   
   <link
