@@ -1,0 +1,273 @@
+[0.078s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.078s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=12, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7adf8bac2710>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7adf8bac2260>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7adf8bac2260>>, mixin_verb=('build',))
+[0.188s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.188s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.188s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.188s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.188s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.188s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.188s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/suvi/poc_arm'
+[0.188s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.188s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.188s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.188s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.188s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.188s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.188s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.188s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.188s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(src/gazebo_ros_link_attacher) by extensions ['ignore', 'ignore_ament_install']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(src/gazebo_ros_link_attacher) by extension 'ignore'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(src/gazebo_ros_link_attacher) by extension 'ignore_ament_install'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(src/gazebo_ros_link_attacher) by extensions ['colcon_pkg']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(src/gazebo_ros_link_attacher) by extension 'colcon_pkg'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(src/gazebo_ros_link_attacher) by extensions ['colcon_meta']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(src/gazebo_ros_link_attacher) by extension 'colcon_meta'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(src/gazebo_ros_link_attacher) by extensions ['ros']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(src/gazebo_ros_link_attacher) by extension 'ros'
+[0.205s] DEBUG:colcon.colcon_core.package_identification:Package 'src/gazebo_ros_link_attacher' with type 'ros.catkin' and name 'gazebo_ros_link_attacher'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_commander_cpp) by extensions ['ignore', 'ignore_ament_install']
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_commander_cpp) by extension 'ignore'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_commander_cpp) by extension 'ignore_ament_install'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_commander_cpp) by extensions ['colcon_pkg']
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_commander_cpp) by extension 'colcon_pkg'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_commander_cpp) by extensions ['colcon_meta']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_commander_cpp) by extension 'colcon_meta'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_commander_cpp) by extensions ['ros']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_commander_cpp) by extension 'ros'
+[0.206s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_robot_commander_cpp' with type 'ros.ament_cmake' and name 'my_robot_commander_cpp'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extension 'ignore'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extension 'ignore_ament_install'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extensions ['colcon_pkg']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extension 'colcon_pkg'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extensions ['colcon_meta']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extension 'colcon_meta'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extensions ['ros']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extension 'ros'
+[0.207s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_robot_interfaces' with type 'ros.ament_cmake' and name 'my_robot_interfaces'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/poc_arm) by extensions ['ignore', 'ignore_ament_install']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/poc_arm) by extension 'ignore'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/poc_arm) by extension 'ignore_ament_install'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/poc_arm) by extensions ['colcon_pkg']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/poc_arm) by extension 'colcon_pkg'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/poc_arm) by extensions ['colcon_meta']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/poc_arm) by extension 'colcon_meta'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/poc_arm) by extensions ['ros']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/poc_arm) by extension 'ros'
+[0.207s] DEBUG:colcon.colcon_core.package_identification:Package 'src/poc_arm' with type 'ros.ament_cmake' and name 'poc_arm'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/poc_moveit_config) by extensions ['ignore', 'ignore_ament_install']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/poc_moveit_config) by extension 'ignore'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/poc_moveit_config) by extension 'ignore_ament_install'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/poc_moveit_config) by extensions ['colcon_pkg']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/poc_moveit_config) by extension 'colcon_pkg'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/poc_moveit_config) by extensions ['colcon_meta']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/poc_moveit_config) by extension 'colcon_meta'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/poc_moveit_config) by extensions ['ros']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/poc_moveit_config) by extension 'ros'
+[0.208s] DEBUG:colcon.colcon_core.package_identification:Package 'src/poc_moveit_config' with type 'ros.ament_cmake' and name 'poc_moveit_config'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense_gazebo) by extensions ['ignore', 'ignore_ament_install']
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense_gazebo) by extension 'ignore'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense_gazebo) by extension 'ignore_ament_install'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense_gazebo) by extensions ['colcon_pkg']
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense_gazebo) by extension 'colcon_pkg'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense_gazebo) by extensions ['colcon_meta']
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense_gazebo) by extension 'colcon_meta'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense_gazebo) by extensions ['ros']
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense_gazebo) by extension 'ros'
+[0.208s] DEBUG:colcon.colcon_core.package_identification:Package 'src/realsense_gazebo' with type 'ros.ament_cmake' and name 'realsense_gazebo'
+[0.208s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.208s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.208s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.208s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.208s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.227s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.227s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.229s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 564 installed packages in /opt/ros/humble
+[0.230s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.261s] Level 5:colcon.colcon_core.verb:set package 'gazebo_ros_link_attacher' build argument 'cmake_args' from command line to 'None'
+[0.261s] Level 5:colcon.colcon_core.verb:set package 'gazebo_ros_link_attacher' build argument 'cmake_target' from command line to 'None'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'gazebo_ros_link_attacher' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'gazebo_ros_link_attacher' build argument 'cmake_clean_cache' from command line to 'False'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'gazebo_ros_link_attacher' build argument 'cmake_clean_first' from command line to 'False'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'gazebo_ros_link_attacher' build argument 'cmake_force_configure' from command line to 'False'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'gazebo_ros_link_attacher' build argument 'ament_cmake_args' from command line to 'None'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'gazebo_ros_link_attacher' build argument 'catkin_cmake_args' from command line to 'None'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'gazebo_ros_link_attacher' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.262s] DEBUG:colcon.colcon_core.verb:Building package 'gazebo_ros_link_attacher' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/suvi/poc_arm/build/gazebo_ros_link_attacher', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/suvi/poc_arm/install/gazebo_ros_link_attacher', 'merge_install': False, 'path': '/home/suvi/poc_arm/src/gazebo_ros_link_attacher', 'symlink_install': False, 'test_result_base': None}
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.262s] DEBUG:colcon.colcon_core.verb:Building package 'my_robot_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/suvi/poc_arm/build/my_robot_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/suvi/poc_arm/install/my_robot_interfaces', 'merge_install': False, 'path': '/home/suvi/poc_arm/src/my_robot_interfaces', 'symlink_install': False, 'test_result_base': None}
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'poc_arm' build argument 'cmake_args' from command line to 'None'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'poc_arm' build argument 'cmake_target' from command line to 'None'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'poc_arm' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'poc_arm' build argument 'cmake_clean_cache' from command line to 'False'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'poc_arm' build argument 'cmake_clean_first' from command line to 'False'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'poc_arm' build argument 'cmake_force_configure' from command line to 'False'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'poc_arm' build argument 'ament_cmake_args' from command line to 'None'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'poc_arm' build argument 'catkin_cmake_args' from command line to 'None'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'poc_arm' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.262s] DEBUG:colcon.colcon_core.verb:Building package 'poc_arm' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/suvi/poc_arm/build/poc_arm', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/suvi/poc_arm/install/poc_arm', 'merge_install': False, 'path': '/home/suvi/poc_arm/src/poc_arm', 'symlink_install': False, 'test_result_base': None}
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'realsense_gazebo' build argument 'cmake_args' from command line to 'None'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'realsense_gazebo' build argument 'cmake_target' from command line to 'None'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'realsense_gazebo' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'realsense_gazebo' build argument 'cmake_clean_cache' from command line to 'False'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'realsense_gazebo' build argument 'cmake_clean_first' from command line to 'False'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'realsense_gazebo' build argument 'cmake_force_configure' from command line to 'False'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'realsense_gazebo' build argument 'ament_cmake_args' from command line to 'None'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'realsense_gazebo' build argument 'catkin_cmake_args' from command line to 'None'
+[0.262s] Level 5:colcon.colcon_core.verb:set package 'realsense_gazebo' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.262s] DEBUG:colcon.colcon_core.verb:Building package 'realsense_gazebo' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/suvi/poc_arm/build/realsense_gazebo', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/suvi/poc_arm/install/realsense_gazebo', 'merge_install': False, 'path': '/home/suvi/poc_arm/src/realsense_gazebo', 'symlink_install': False, 'test_result_base': None}
+[0.263s] Level 5:colcon.colcon_core.verb:set package 'my_robot_commander_cpp' build argument 'cmake_args' from command line to 'None'
+[0.263s] Level 5:colcon.colcon_core.verb:set package 'my_robot_commander_cpp' build argument 'cmake_target' from command line to 'None'
+[0.263s] Level 5:colcon.colcon_core.verb:set package 'my_robot_commander_cpp' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.263s] Level 5:colcon.colcon_core.verb:set package 'my_robot_commander_cpp' build argument 'cmake_clean_cache' from command line to 'False'
+[0.263s] Level 5:colcon.colcon_core.verb:set package 'my_robot_commander_cpp' build argument 'cmake_clean_first' from command line to 'False'
+[0.263s] Level 5:colcon.colcon_core.verb:set package 'my_robot_commander_cpp' build argument 'cmake_force_configure' from command line to 'False'
+[0.263s] Level 5:colcon.colcon_core.verb:set package 'my_robot_commander_cpp' build argument 'ament_cmake_args' from command line to 'None'
+[0.263s] Level 5:colcon.colcon_core.verb:set package 'my_robot_commander_cpp' build argument 'catkin_cmake_args' from command line to 'None'
+[0.263s] Level 5:colcon.colcon_core.verb:set package 'my_robot_commander_cpp' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.263s] DEBUG:colcon.colcon_core.verb:Building package 'my_robot_commander_cpp' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/suvi/poc_arm/build/my_robot_commander_cpp', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/suvi/poc_arm/install/my_robot_commander_cpp', 'merge_install': False, 'path': '/home/suvi/poc_arm/src/my_robot_commander_cpp', 'symlink_install': False, 'test_result_base': None}
+[0.263s] Level 5:colcon.colcon_core.verb:set package 'poc_moveit_config' build argument 'cmake_args' from command line to 'None'
+[0.263s] Level 5:colcon.colcon_core.verb:set package 'poc_moveit_config' build argument 'cmake_target' from command line to 'None'
+[0.263s] Level 5:colcon.colcon_core.verb:set package 'poc_moveit_config' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.263s] Level 5:colcon.colcon_core.verb:set package 'poc_moveit_config' build argument 'cmake_clean_cache' from command line to 'False'
+[0.263s] Level 5:colcon.colcon_core.verb:set package 'poc_moveit_config' build argument 'cmake_clean_first' from command line to 'False'
+[0.263s] Level 5:colcon.colcon_core.verb:set package 'poc_moveit_config' build argument 'cmake_force_configure' from command line to 'False'
+[0.263s] Level 5:colcon.colcon_core.verb:set package 'poc_moveit_config' build argument 'ament_cmake_args' from command line to 'None'
+[0.263s] Level 5:colcon.colcon_core.verb:set package 'poc_moveit_config' build argument 'catkin_cmake_args' from command line to 'None'
+[0.263s] Level 5:colcon.colcon_core.verb:set package 'poc_moveit_config' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.263s] DEBUG:colcon.colcon_core.verb:Building package 'poc_moveit_config' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/suvi/poc_arm/build/poc_moveit_config', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/suvi/poc_arm/install/poc_moveit_config', 'merge_install': False, 'path': '/home/suvi/poc_arm/src/poc_moveit_config', 'symlink_install': False, 'test_result_base': None}
+[0.263s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.264s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.264s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/suvi/poc_arm/src/my_robot_interfaces' with build type 'ament_cmake'
+[0.264s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/suvi/poc_arm/src/my_robot_interfaces'
+[0.265s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.265s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.265s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.267s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/suvi/poc_arm/src/poc_arm' with build type 'ament_cmake'
+[0.267s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/suvi/poc_arm/src/poc_arm'
+[0.268s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.268s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.270s] INFO:colcon.colcon_ros.task.catkin.build:Building ROS package in '/home/suvi/poc_arm/src/gazebo_ros_link_attacher' with build type 'catkin'
+[0.270s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/suvi/poc_arm/src/gazebo_ros_link_attacher'
+[0.270s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.270s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.272s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/suvi/poc_arm/src/realsense_gazebo' with build type 'ament_cmake'
+[0.272s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/suvi/poc_arm/src/realsense_gazebo'
+[0.272s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.272s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.278s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/suvi/poc_arm/build/my_robot_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/suvi/poc_arm/build/my_robot_interfaces -- -j12 -l12
+[0.279s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/suvi/poc_arm/build/poc_arm': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/suvi/poc_arm/build/poc_arm -- -j12 -l12
+[0.281s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/suvi/poc_arm/build/gazebo_ros_link_attacher': /usr/bin/cmake /home/suvi/poc_arm/src/gazebo_ros_link_attacher -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/suvi/poc_arm/install/gazebo_ros_link_attacher
+[0.285s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/suvi/poc_arm/build/realsense_gazebo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/suvi/poc_arm/build/realsense_gazebo -- -j12 -l12
+[0.307s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/suvi/poc_arm/build/poc_arm' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/suvi/poc_arm/build/poc_arm -- -j12 -l12
+[0.316s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/suvi/poc_arm/build/poc_arm': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/suvi/poc_arm/build/poc_arm
+[0.318s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/suvi/poc_arm/build/gazebo_ros_link_attacher' returned '1': /usr/bin/cmake /home/suvi/poc_arm/src/gazebo_ros_link_attacher -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/suvi/poc_arm/install/gazebo_ros_link_attacher
+[0.319s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/suvi/poc_arm/build/realsense_gazebo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/suvi/poc_arm/build/realsense_gazebo -- -j12 -l12
+[0.321s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/suvi/poc_arm/build/realsense_gazebo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/suvi/poc_arm/build/realsense_gazebo
+[0.326s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(poc_arm)
+[0.326s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/suvi/poc_arm/build/poc_arm' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/suvi/poc_arm/build/poc_arm
+[0.334s] Level 1:colcon.colcon_core.environment:checking '/home/suvi/poc_arm/install/poc_arm' for CMake module files
+[0.335s] Level 1:colcon.colcon_core.environment:checking '/home/suvi/poc_arm/install/poc_arm' for CMake config files
+[0.335s] Level 1:colcon.colcon_core.shell:create_environment_hook('poc_arm', 'cmake_prefix_path')
+[0.335s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/suvi/poc_arm/install/poc_arm/share/poc_arm/hook/cmake_prefix_path.ps1'
+[0.336s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/suvi/poc_arm/install/poc_arm/share/poc_arm/hook/cmake_prefix_path.dsv'
+[0.337s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/suvi/poc_arm/install/poc_arm/share/poc_arm/hook/cmake_prefix_path.sh'
+[0.338s] Level 1:colcon.colcon_core.environment:checking '/home/suvi/poc_arm/install/poc_arm/bin'
+[0.338s] Level 1:colcon.colcon_core.environment:checking '/home/suvi/poc_arm/install/poc_arm/lib/pkgconfig/poc_arm.pc'
+[0.339s] Level 1:colcon.colcon_core.environment:checking '/home/suvi/poc_arm/install/poc_arm/lib/python3.10/site-packages'
+[0.339s] Level 1:colcon.colcon_core.environment:checking '/home/suvi/poc_arm/install/poc_arm/bin'
+[0.339s] INFO:colcon.colcon_core.shell:Creating package script '/home/suvi/poc_arm/install/poc_arm/share/poc_arm/package.ps1'
+[0.340s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/suvi/poc_arm/install/poc_arm/share/poc_arm/package.dsv'
+[0.341s] INFO:colcon.colcon_core.shell:Creating package script '/home/suvi/poc_arm/install/poc_arm/share/poc_arm/package.sh'
+[0.342s] INFO:colcon.colcon_core.shell:Creating package script '/home/suvi/poc_arm/install/poc_arm/share/poc_arm/package.bash'
+[0.342s] INFO:colcon.colcon_core.shell:Creating package script '/home/suvi/poc_arm/install/poc_arm/share/poc_arm/package.zsh'
+[0.343s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/suvi/poc_arm/install/poc_arm/share/colcon-core/packages/poc_arm)
+[0.343s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(poc_arm)
+[0.343s] Level 1:colcon.colcon_core.environment:checking '/home/suvi/poc_arm/install/poc_arm' for CMake module files
+[0.343s] Level 1:colcon.colcon_core.environment:checking '/home/suvi/poc_arm/install/poc_arm' for CMake config files
+[0.344s] Level 1:colcon.colcon_core.shell:create_environment_hook('poc_arm', 'cmake_prefix_path')
+[0.344s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/suvi/poc_arm/install/poc_arm/share/poc_arm/hook/cmake_prefix_path.ps1'
+[0.344s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/suvi/poc_arm/install/poc_arm/share/poc_arm/hook/cmake_prefix_path.dsv'
+[0.344s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/suvi/poc_arm/install/poc_arm/share/poc_arm/hook/cmake_prefix_path.sh'
+[0.344s] Level 1:colcon.colcon_core.environment:checking '/home/suvi/poc_arm/install/poc_arm/bin'
+[0.344s] Level 1:colcon.colcon_core.environment:checking '/home/suvi/poc_arm/install/poc_arm/lib/pkgconfig/poc_arm.pc'
+[0.345s] Level 1:colcon.colcon_core.environment:checking '/home/suvi/poc_arm/install/poc_arm/lib/python3.10/site-packages'
+[0.345s] Level 1:colcon.colcon_core.environment:checking '/home/suvi/poc_arm/install/poc_arm/bin'
+[0.345s] INFO:colcon.colcon_core.shell:Creating package script '/home/suvi/poc_arm/install/poc_arm/share/poc_arm/package.ps1'
+[0.345s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/suvi/poc_arm/install/poc_arm/share/poc_arm/package.dsv'
+[0.345s] INFO:colcon.colcon_core.shell:Creating package script '/home/suvi/poc_arm/install/poc_arm/share/poc_arm/package.sh'
+[0.346s] INFO:colcon.colcon_core.shell:Creating package script '/home/suvi/poc_arm/install/poc_arm/share/poc_arm/package.bash'
+[0.346s] INFO:colcon.colcon_core.shell:Creating package script '/home/suvi/poc_arm/install/poc_arm/share/poc_arm/package.zsh'
+[0.346s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/suvi/poc_arm/install/poc_arm/share/colcon-core/packages/poc_arm)
+[0.346s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/suvi/poc_arm/src/poc_moveit_config' with build type 'ament_cmake'
+[0.347s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/suvi/poc_arm/src/poc_moveit_config'
+[0.347s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.347s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.350s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(gazebo_ros_link_attacher)
+[0.350s] Level 1:colcon.colcon_core.environment:checking '/home/suvi/poc_arm/install/gazebo_ros_link_attacher' for CMake module files
+[0.350s] Level 1:colcon.colcon_core.environment:checking '/home/suvi/poc_arm/install/gazebo_ros_link_attacher' for CMake config files
+[0.350s] Level 1:colcon.colcon_core.environment:checking '/home/suvi/poc_arm/install/gazebo_ros_link_attacher/bin'
+[0.350s] Level 1:colcon.colcon_core.environment:checking '/home/suvi/poc_arm/install/gazebo_ros_link_attacher/lib/pkgconfig/gazebo_ros_link_attacher.pc'
+[0.350s] Level 1:colcon.colcon_core.environment:checking '/home/suvi/poc_arm/install/gazebo_ros_link_attacher/lib/python3.10/site-packages'
+[0.351s] Level 1:colcon.colcon_core.environment:checking '/home/suvi/poc_arm/install/gazebo_ros_link_attacher/bin'
+[0.351s] INFO:colcon.colcon_core.shell:Creating package script '/home/suvi/poc_arm/install/gazebo_ros_link_attacher/share/gazebo_ros_link_attacher/package.ps1'
+[0.351s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/suvi/poc_arm/install/gazebo_ros_link_attacher/share/gazebo_ros_link_attacher/package.dsv'
+[0.351s] INFO:colcon.colcon_core.shell:Creating package script '/home/suvi/poc_arm/install/gazebo_ros_link_attacher/share/gazebo_ros_link_attacher/package.sh'
+[0.352s] INFO:colcon.colcon_core.shell:Creating package script '/home/suvi/poc_arm/install/gazebo_ros_link_attacher/share/gazebo_ros_link_attacher/package.bash'
+[0.352s] INFO:colcon.colcon_core.shell:Creating package script '/home/suvi/poc_arm/install/gazebo_ros_link_attacher/share/gazebo_ros_link_attacher/package.zsh'
+[0.352s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/suvi/poc_arm/install/gazebo_ros_link_attacher/share/colcon-core/packages/gazebo_ros_link_attacher)
+[0.609s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[0.609s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[0.609s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '1'
+[0.609s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[0.612s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[0.612s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[0.612s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[0.620s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[0.620s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/suvi/poc_arm/install/local_setup.ps1'
+[0.621s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/suvi/poc_arm/install/_local_setup_util_ps1.py'
+[0.622s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/suvi/poc_arm/install/setup.ps1'
+[0.623s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/suvi/poc_arm/install/local_setup.sh'
+[0.623s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/suvi/poc_arm/install/_local_setup_util_sh.py'
+[0.624s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/suvi/poc_arm/install/setup.sh'
+[0.624s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/suvi/poc_arm/install/local_setup.bash'
+[0.624s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/suvi/poc_arm/install/setup.bash'
+[0.625s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/suvi/poc_arm/install/local_setup.zsh'
+[0.625s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/suvi/poc_arm/install/setup.zsh'

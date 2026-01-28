@@ -173,7 +173,7 @@ private:
             0.0,  // shoulder_pan
             0.0,  // shoulder_yaw
             0.0,  // shoulder_roll
-            1.57,  // elbow
+            0.0,  // elbow
             0.0,  // wrist_yaw
             0.0,  // wrist_pitch
             0.0   // wrist_roll

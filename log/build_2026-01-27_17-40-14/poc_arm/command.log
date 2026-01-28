@@ -1,0 +1,4 @@
+Invoking command in '/home/suvi/poc_arm/build/poc_arm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/suvi/poc_arm/install/realsense_gazebo:/opt/ros/humble /usr/bin/cmake --build /home/suvi/poc_arm/build/poc_arm -- -j12 -l12
+Invoked command in '/home/suvi/poc_arm/build/poc_arm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/suvi/poc_arm/install/realsense_gazebo:/opt/ros/humble /usr/bin/cmake --build /home/suvi/poc_arm/build/poc_arm -- -j12 -l12
+Invoking command in '/home/suvi/poc_arm/build/poc_arm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/suvi/poc_arm/install/realsense_gazebo:/opt/ros/humble /usr/bin/cmake --install /home/suvi/poc_arm/build/poc_arm
+Invoked command in '/home/suvi/poc_arm/build/poc_arm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/suvi/poc_arm/install/realsense_gazebo:/opt/ros/humble /usr/bin/cmake --install /home/suvi/poc_arm/build/poc_arm
