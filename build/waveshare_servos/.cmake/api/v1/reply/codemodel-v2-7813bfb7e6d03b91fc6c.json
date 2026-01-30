@@ -1,0 +1,97 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-d3d567e84897f5430668.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "waveshare_servos",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "calibrate_midpoint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-calibrate_midpoint-b5e5beee936ea372da7c.json",
+					"name" : "calibrate_midpoint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "set_id::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-set_id-c849f8a5d91287b31d8f.json",
+					"name" : "set_id",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-526fb1d151c0410cfe33.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "waveshare_servos::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-waveshare_servos-9a4d0df0afc56513bc24.json",
+					"name" : "waveshare_servos",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "waveshare_servos_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-waveshare_servos_uninstall-f8862809dbd3ae79d69c.json",
+					"name" : "waveshare_servos_uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/suvi/poc_arm/build/waveshare_servos",
+		"source" : "/home/suvi/poc_arm/src/waveshare_servos"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

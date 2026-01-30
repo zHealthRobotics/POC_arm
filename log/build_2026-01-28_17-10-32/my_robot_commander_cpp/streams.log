@@ -1,0 +1,34 @@
+[0.008s] Invoking command in '/home/suvi/poc_arm/build/my_robot_commander_cpp': CMAKE_PREFIX_PATH=/home/suvi/poc_arm/install/my_robot_interfaces:/home/suvi/poc_arm/install/waveshare_servos:/home/suvi/poc_arm/install/realsense_gazebo:/home/suvi/poc_arm/install/poc_moveit_config:/home/suvi/poc_arm/install/poc_arm:/home/suvi/poc_arm/install/my_robot_commander_cpp:/opt/ros/humble LD_LIBRARY_PATH=/home/suvi/poc_arm/install/my_robot_interfaces/lib:/home/suvi/poc_arm/install/waveshare_servos/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --build /home/suvi/poc_arm/build/my_robot_commander_cpp -- -j12 -l12
+[0.063s] [ 12%] [32mBuilding CXX object CMakeFiles/task_manager.dir/src/task_manager.cpp.o[0m
+[0.078s] [ 25%] [32mBuilding CXX object CMakeFiles/commander.dir/src/commander_template.cpp.o[0m
+[0.079s] [ 62%] Built target test_moveit
+[0.079s] [ 75%] Built target print_current_pose
+[7.050s] [ 87%] [32m[1mLinking CXX executable task_manager[0m
+[7.482s] [ 87%] Built target task_manager
+[12.195s] [100%] [32m[1mLinking CXX executable commander[0m
+[13.016s] [100%] Built target commander
+[13.026s] Invoked command in '/home/suvi/poc_arm/build/my_robot_commander_cpp' returned '0': CMAKE_PREFIX_PATH=/home/suvi/poc_arm/install/my_robot_interfaces:/home/suvi/poc_arm/install/waveshare_servos:/home/suvi/poc_arm/install/realsense_gazebo:/home/suvi/poc_arm/install/poc_moveit_config:/home/suvi/poc_arm/install/poc_arm:/home/suvi/poc_arm/install/my_robot_commander_cpp:/opt/ros/humble LD_LIBRARY_PATH=/home/suvi/poc_arm/install/my_robot_interfaces/lib:/home/suvi/poc_arm/install/waveshare_servos/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --build /home/suvi/poc_arm/build/my_robot_commander_cpp -- -j12 -l12
+[13.027s] Invoking command in '/home/suvi/poc_arm/build/my_robot_commander_cpp': CMAKE_PREFIX_PATH=/home/suvi/poc_arm/install/my_robot_interfaces:/home/suvi/poc_arm/install/waveshare_servos:/home/suvi/poc_arm/install/realsense_gazebo:/home/suvi/poc_arm/install/poc_moveit_config:/home/suvi/poc_arm/install/poc_arm:/home/suvi/poc_arm/install/my_robot_commander_cpp:/opt/ros/humble LD_LIBRARY_PATH=/home/suvi/poc_arm/install/my_robot_interfaces/lib:/home/suvi/poc_arm/install/waveshare_servos/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --install /home/suvi/poc_arm/build/my_robot_commander_cpp
+[13.033s] -- Install configuration: ""
+[13.033s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/lib/my_robot_commander_cpp/test_moveit
+[13.033s] -- Installing: /home/suvi/poc_arm/install/my_robot_commander_cpp/lib/my_robot_commander_cpp/commander
+[13.038s] -- Set runtime path of "/home/suvi/poc_arm/install/my_robot_commander_cpp/lib/my_robot_commander_cpp/commander" to ""
+[13.038s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/lib/my_robot_commander_cpp/print_current_pose
+[13.038s] -- Installing: /home/suvi/poc_arm/install/my_robot_commander_cpp/lib/my_robot_commander_cpp/task_manager
+[13.041s] -- Set runtime path of "/home/suvi/poc_arm/install/my_robot_commander_cpp/lib/my_robot_commander_cpp/task_manager" to ""
+[13.041s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/ament_index/resource_index/package_run_dependencies/my_robot_commander_cpp
+[13.041s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/ament_index/resource_index/parent_prefix_path/my_robot_commander_cpp
+[13.041s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/environment/ament_prefix_path.sh
+[13.041s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/environment/ament_prefix_path.dsv
+[13.041s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/environment/path.sh
+[13.041s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/environment/path.dsv
+[13.041s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/local_setup.bash
+[13.041s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/local_setup.sh
+[13.041s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/local_setup.zsh
+[13.041s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/local_setup.dsv
+[13.041s] -- Installing: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/package.dsv
+[13.041s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/ament_index/resource_index/packages/my_robot_commander_cpp
+[13.042s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/cmake/my_robot_commander_cppConfig.cmake
+[13.042s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/cmake/my_robot_commander_cppConfig-version.cmake
+[13.042s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/package.xml
+[13.043s] Invoked command in '/home/suvi/poc_arm/build/my_robot_commander_cpp' returned '0': CMAKE_PREFIX_PATH=/home/suvi/poc_arm/install/my_robot_interfaces:/home/suvi/poc_arm/install/waveshare_servos:/home/suvi/poc_arm/install/realsense_gazebo:/home/suvi/poc_arm/install/poc_moveit_config:/home/suvi/poc_arm/install/poc_arm:/home/suvi/poc_arm/install/my_robot_commander_cpp:/opt/ros/humble LD_LIBRARY_PATH=/home/suvi/poc_arm/install/my_robot_interfaces/lib:/home/suvi/poc_arm/install/waveshare_servos/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --install /home/suvi/poc_arm/build/my_robot_commander_cpp

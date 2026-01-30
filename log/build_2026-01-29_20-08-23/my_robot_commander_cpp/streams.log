@@ -1,0 +1,32 @@
+[0.007s] Invoking command in '/home/suvi/poc_arm/build/my_robot_commander_cpp': AMENT_PREFIX_PATH=/home/suvi/poc_arm/install/my_robot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/suvi/poc_arm/install/my_robot_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/suvi/poc_arm/install/my_robot_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/suvi/poc_arm/install/my_robot_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/suvi/poc_arm/build/my_robot_commander_cpp -- -j12 -l12
+[0.056s] [35m[1mConsolidate compiler generated dependencies of target commander[0m
+[0.065s] [ 12%] [32mBuilding CXX object CMakeFiles/task_manager.dir/src/task_manager.cpp.o[0m
+[0.088s] [ 37%] Built target test_moveit
+[0.088s] [ 62%] Built target commander
+[0.088s] [ 87%] Built target print_current_pose
+[6.706s] [100%] [32m[1mLinking CXX executable task_manager[0m
+[7.141s] [100%] Built target task_manager
+[7.150s] Invoked command in '/home/suvi/poc_arm/build/my_robot_commander_cpp' returned '0': AMENT_PREFIX_PATH=/home/suvi/poc_arm/install/my_robot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/suvi/poc_arm/install/my_robot_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/suvi/poc_arm/install/my_robot_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/suvi/poc_arm/install/my_robot_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/suvi/poc_arm/build/my_robot_commander_cpp -- -j12 -l12
+[7.152s] Invoking command in '/home/suvi/poc_arm/build/my_robot_commander_cpp': AMENT_PREFIX_PATH=/home/suvi/poc_arm/install/my_robot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/suvi/poc_arm/install/my_robot_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/suvi/poc_arm/install/my_robot_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/suvi/poc_arm/install/my_robot_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/suvi/poc_arm/build/my_robot_commander_cpp
+[7.157s] -- Install configuration: ""
+[7.158s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/lib/my_robot_commander_cpp/test_moveit
+[7.158s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/lib/my_robot_commander_cpp/commander
+[7.158s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/lib/my_robot_commander_cpp/print_current_pose
+[7.159s] -- Installing: /home/suvi/poc_arm/install/my_robot_commander_cpp/lib/my_robot_commander_cpp/task_manager
+[7.161s] -- Set runtime path of "/home/suvi/poc_arm/install/my_robot_commander_cpp/lib/my_robot_commander_cpp/task_manager" to ""
+[7.162s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/ament_index/resource_index/package_run_dependencies/my_robot_commander_cpp
+[7.162s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/ament_index/resource_index/parent_prefix_path/my_robot_commander_cpp
+[7.162s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/environment/ament_prefix_path.sh
+[7.162s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/environment/ament_prefix_path.dsv
+[7.162s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/environment/path.sh
+[7.162s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/environment/path.dsv
+[7.162s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/local_setup.bash
+[7.162s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/local_setup.sh
+[7.162s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/local_setup.zsh
+[7.162s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/local_setup.dsv
+[7.162s] -- Installing: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/package.dsv
+[7.162s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/ament_index/resource_index/packages/my_robot_commander_cpp
+[7.162s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/cmake/my_robot_commander_cppConfig.cmake
+[7.162s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/cmake/my_robot_commander_cppConfig-version.cmake
+[7.163s] -- Up-to-date: /home/suvi/poc_arm/install/my_robot_commander_cpp/share/my_robot_commander_cpp/package.xml
+[7.164s] Invoked command in '/home/suvi/poc_arm/build/my_robot_commander_cpp' returned '0': AMENT_PREFIX_PATH=/home/suvi/poc_arm/install/my_robot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/suvi/poc_arm/install/my_robot_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/suvi/poc_arm/install/my_robot_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/suvi/poc_arm/install/my_robot_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/suvi/poc_arm/build/my_robot_commander_cpp

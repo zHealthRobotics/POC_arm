@@ -1,0 +1,101 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found hardware_interface: 2.53.0 (/opt/ros/humble/share/hardware_interface/cmake)
+-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+-- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/suvi/poc_arm/build/waveshare_servos
+[ 16%] [32mBuilding CXX object CMakeFiles/waveshare_servos.dir/src/SCS.cpp.o[0m
+[ 16%] [32mBuilding CXX object CMakeFiles/waveshare_servos.dir/src/SCSerial.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/waveshare_servos.dir/src/SMSCL.cpp.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/waveshare_servos.dir/src/SCSCL.cpp.o[0m
+[ 41%] [32mBuilding CXX object CMakeFiles/waveshare_servos.dir/src/waveshare_servos.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/waveshare_servos.dir/src/SMSBL.cpp.o[0m
+[ 58%] [32mBuilding CXX object CMakeFiles/waveshare_servos.dir/src/SMS_STS.cpp.o[0m
+[ 66%] [32m[1mLinking CXX shared library libwaveshare_servos.so[0m
+[ 66%] Built target waveshare_servos
+[ 75%] [32mBuilding CXX object CMakeFiles/calibrate_midpoint.dir/src/calibrate_midpoint.cpp.o[0m
+[ 83%] [32mBuilding CXX object CMakeFiles/set_id.dir/src/set_id.cpp.o[0m
+[ 91%] [32m[1mLinking CXX executable calibrate_midpoint[0m
+[100%] [32m[1mLinking CXX executable set_id[0m
+[100%] Built target calibrate_midpoint
+[100%] Built target set_id
+-- Install configuration: ""
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/waveshare_servos.xml
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/SCS.h
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/visibility_controls.h
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/SCSerial.h
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/INST.h
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/SMS_STS.h
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/SCServo.h
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/waveshare_servos.hpp
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/SMSBL.h
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/SCSCL.h
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/SMSCL.h
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/description/ros2_control
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/description/ros2_control/example.ros2_control.xacro
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/description/urdf
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/description/urdf/example.urdf.xacro
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/launch
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/launch/example.launch.py
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/config
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/config/example_controllers.yaml
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/lib/libwaveshare_servos.so
+-- Set runtime path of "/home/suvi/poc_arm/install/waveshare_servos/lib/libwaveshare_servos.so" to ""
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/lib/waveshare_servos/set_id
+-- Set runtime path of "/home/suvi/poc_arm/install/waveshare_servos/lib/waveshare_servos/set_id" to ""
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/lib/waveshare_servos/calibrate_midpoint
+-- Set runtime path of "/home/suvi/poc_arm/install/waveshare_servos/lib/waveshare_servos/calibrate_midpoint" to ""
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/environment/library_path.sh
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/environment/library_path.dsv
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/ament_index/resource_index/package_run_dependencies/waveshare_servos
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/ament_index/resource_index/parent_prefix_path/waveshare_servos
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/environment/ament_prefix_path.sh
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/environment/ament_prefix_path.dsv
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/environment/path.sh
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/environment/path.dsv
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/local_setup.bash
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/local_setup.sh
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/local_setup.zsh
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/local_setup.dsv
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/package.dsv
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/ament_index/resource_index/packages/waveshare_servos
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/waveshare_servos
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/cmake/export_waveshare_servosExport.cmake
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/cmake/export_waveshare_servosExport-noconfig.cmake
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/cmake/ament_cmake_export_targets-extras.cmake
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/cmake/waveshare_servosConfig.cmake
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/cmake/waveshare_servosConfig-version.cmake
+-- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/package.xml

@@ -34,6 +34,15 @@ public:
             "position_command", 10,
             std::bind(&Commander::positionCmdCallback, this, _1));
             
+        lock_orientation_sub_ = node_->create_subscription<std_msgs::msg::Bool>(
+            "/lock_orientation", 10,
+            std::bind(&Commander::lockOrientationCallback, this, _1));
+
+        clear_constraints_sub_ = node_->create_subscription<std_msgs::msg::Bool>(
+            "/clear_constraints", 10,
+            std::bind(&Commander::clearConstraintsCallback, this, _1));
+                    
+                    
         execution_done_pub_ = node_->create_publisher<std_msgs::msg::Bool>("/commander/execution_done", 10);
     
     }
@@ -56,6 +65,7 @@ public:
     void goToPositionTarget(double x, double y, double z)
     {
         arm_->setStartStateToCurrentState();
+        arm_->clearPoseTargets(); 
         arm_->setPositionTarget(x, y, z);
         planAndExecute(arm_);
     }
@@ -79,6 +89,8 @@ public:
         target_pose.pose.orientation.w = q.w();
 
         arm_->setStartStateToCurrentState();
+        
+        arm_->clearPoseTargets(); 
 
         if (!cartesian_path)
         {
@@ -98,7 +110,7 @@ public:
             double fraction = arm_->computeCartesianPath(
                 waypoints, eef_step, jump_threshold, trajectory, avoid_collisions);
 
-            if (fraction > 0.5)
+            if (fraction > 0.4)
             {
                 arm_->execute(trajectory);            
                 std_msgs::msg::Bool msg;
@@ -107,6 +119,29 @@ public:
             }
         }
     }
+
+    void lockEndEffectorOrientation(double tol = 0.3)
+    {
+        moveit_msgs::msg::OrientationConstraint ocm;
+
+        ocm.link_name = arm_->getEndEffectorLink();
+        ocm.header.frame_id = "torso_link";
+
+        auto pose = arm_->getCurrentPose().pose;
+        ocm.orientation = pose.orientation;
+
+        ocm.absolute_x_axis_tolerance = tol;
+        ocm.absolute_y_axis_tolerance = tol;
+        ocm.absolute_z_axis_tolerance = M_PI;  // allow yaw
+
+        ocm.weight = 1.0;
+
+        moveit_msgs::msg::Constraints constraints;
+        constraints.orientation_constraints.push_back(ocm);
+
+        arm_->setPathConstraints(constraints);
+    }
+
 
 private:
     void planAndExecute(const std::shared_ptr<MoveGroupInterface> &interface)
@@ -145,6 +180,23 @@ private:
     {
         goToPositionTarget(msg.x, msg.y, msg.z);
     }
+    
+    void lockOrientationCallback(const std_msgs::msg::Bool &msg)
+    {
+        if (!msg.data) return;
+
+        lockEndEffectorOrientation();
+        RCLCPP_INFO(node_->get_logger(), "End-effector orientation LOCKED");
+    }
+
+    void clearConstraintsCallback(const std_msgs::msg::Bool &msg)
+    {
+        if (!msg.data) return;
+
+        arm_->clearPathConstraints();
+        RCLCPP_INFO(node_->get_logger(), "Path constraints CLEARED");
+    }
+        
 
     std::shared_ptr<rclcpp::Node> node_;
     std::shared_ptr<MoveGroupInterface> arm_;
@@ -153,6 +205,9 @@ private:
     rclcpp::Subscription<PoseCmd>::SharedPtr pose_cmd_sub_;
     rclcpp::Subscription<geometry_msgs::msg::Point>::SharedPtr position_cmd_sub_;
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr execution_done_pub_;
+    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr lock_orientation_sub_;
+    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr clear_constraints_sub_;
+
 
 };
 

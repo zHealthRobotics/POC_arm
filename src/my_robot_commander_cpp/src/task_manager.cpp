@@ -14,6 +14,7 @@ enum class TaskState
     APPROACH,
     REACH_POUR,
     POUR,
+    RESET_ORIENTATION,
     PLACE,
     RETURN,
     DONE
@@ -38,6 +39,14 @@ public:
 
         joint_command_pub_ = this->create_publisher<JointCmd>(
             "/joint_command", 10);
+            
+        lock_orientation_pub_ =
+            this->create_publisher<std_msgs::msg::Bool>("/lock_orientation", 10);
+
+        clear_constraints_pub_ =
+            this->create_publisher<std_msgs::msg::Bool>("/clear_constraints", 10);
+                    
+            
 
         RCLCPP_INFO(
             this->get_logger(),
@@ -79,10 +88,16 @@ private:
         else if (state_ == TaskState::APPROACH)
         {
             RCLCPP_INFO(this->get_logger(), "Approach execution DONE");
+
+            std_msgs::msg::Bool lock;
+            lock.data = true;
+            lock_orientation_pub_->publish(lock);
+            rclcpp::sleep_for(std::chrono::milliseconds(200));
             sendReachPourCommand();
             state_ = TaskState::REACH_POUR;
             RCLCPP_INFO(this->get_logger(), "State → REACH_POUR");
         }
+
         else if (state_ == TaskState::REACH_POUR)
         {
             RCLCPP_INFO(this->get_logger(), "Reach pour execution DONE");
@@ -90,16 +105,32 @@ private:
             state_ = TaskState::POUR;
             RCLCPP_INFO(this->get_logger(), "State → POUR");
         }
+
         else if (state_ == TaskState::POUR)
         {
             RCLCPP_INFO(this->get_logger(), "Pour execution DONE");
+            sendResetOrientationCommand();
+            state_ = TaskState::RESET_ORIENTATION;
+            RCLCPP_INFO(this->get_logger(), "State → RESET_ORIENTATION");
+        }
+        else if (state_ == TaskState::RESET_ORIENTATION)
+        {
+            RCLCPP_INFO(this->get_logger(), "Reset orientation DONE");
+            
+            std_msgs::msg::Bool clear;
+            clear.data = true;
+            clear_constraints_pub_->publish(clear);                 
+            
             sendPlaceCommand();
             state_ = TaskState::PLACE;
             RCLCPP_INFO(this->get_logger(), "State → PLACE");
         }
+
+
         else if (state_ == TaskState::PLACE)
         {
-            RCLCPP_INFO(this->get_logger(), "Place execution DONE");
+            RCLCPP_INFO(this->get_logger(), "Place execution DONE");       
+            
             sendReturnCommand();
             state_ = TaskState::RETURN;
             RCLCPP_INFO(this->get_logger(), "State → RETURN");
@@ -125,37 +156,58 @@ private:
 
     void sendReachPourCommand()
     {
-        JointCmd joints;
-        joints.data = {
-            -0.8203,
-             0.7330,
-             0.3840,
-            -0.3316,
-            -1.0472,
-             0.5236,
-            -1.1345
-        };
+        reach_pour_pose_ = approach_pose_;
 
-        joint_command_pub_->publish(joints);
-        RCLCPP_INFO(this->get_logger(), "Reach-pour joint pose sent");
+        reach_pour_pose_.x -= 0.10;
+        reach_pour_pose_.y += 0.03;
+        reach_pour_pose_.z += 0.05;
+
+        reach_pour_pose_.roll  = approach_pose_.roll;
+        reach_pour_pose_.pitch = approach_pose_.pitch;
+        reach_pour_pose_.yaw   = approach_pose_.yaw;
+
+        reach_pour_pose_.cartesian_path = false;
+
+        command_pub_->publish(reach_pour_pose_);
+
+        RCLCPP_INFO(this->get_logger(),
+            "Reach-pour pose sent (orientation locked)");
     }
+
+
 
     void sendPourCommand()
     {
-        JointCmd joints;
-        joints.data = {
-            -0.8203,
-             0.7330,
-             0.3840,
-            -0.3316,
-            -1.0472,
-             0.5061,
-            -0.0873
-        };
+        PoseCmd cmd = reach_pour_pose_;
 
-        joint_command_pub_->publish(joints);
-        RCLCPP_INFO(this->get_logger(), "Pour joint pose sent");
+        // Controlled pour
+        cmd.roll -= 0.9;
+
+        cmd.cartesian_path = true;
+
+        command_pub_->publish(cmd);
+
+        RCLCPP_INFO(this->get_logger(),
+            "Pour command sent (cartesian orientation rotation)");
     }
+
+    void sendResetOrientationCommand()
+    {
+        PoseCmd cmd = reach_pour_pose_;
+
+        // Undo the pour
+        cmd.roll = reach_pour_pose_.roll;   // back to original upright
+        cmd.pitch = reach_pour_pose_.pitch;
+        cmd.yaw   = reach_pour_pose_.yaw;
+
+        cmd.cartesian_path = true;
+
+        command_pub_->publish(cmd);
+
+        RCLCPP_INFO(this->get_logger(),
+            "Reset orientation command sent (upright again)");
+    }
+
 
     void sendPlaceCommand()
     {
@@ -189,11 +241,16 @@ private:
         TaskState state_;
         PoseCmd target_pose_;
         PoseCmd approach_pose_;
+        PoseCmd reach_pour_pose_;
+
 
         rclcpp::Subscription<PoseCmd>::SharedPtr target_sub_;
         rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr execution_done_sub_;
         rclcpp::Publisher<PoseCmd>::SharedPtr command_pub_;
         rclcpp::Publisher<JointCmd>::SharedPtr joint_command_pub_;
+        rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr lock_orientation_pub_;
+        rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr clear_constraints_pub_;
+
     };
 
 int main(int argc, char **argv)

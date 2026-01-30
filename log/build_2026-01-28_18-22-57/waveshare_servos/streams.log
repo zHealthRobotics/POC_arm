@@ -1,0 +1,53 @@
+[0.012s] Invoking command in '/home/suvi/poc_arm/build/waveshare_servos': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/suvi/poc_arm/build/waveshare_servos -- -j12 -l12
+[0.049s] [ 66%] Built target waveshare_servos
+[0.067s] [ 83%] Built target set_id
+[0.087s] [100%] Built target calibrate_midpoint
+[0.095s] Invoked command in '/home/suvi/poc_arm/build/waveshare_servos' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/suvi/poc_arm/build/waveshare_servos -- -j12 -l12
+[0.096s] Invoking command in '/home/suvi/poc_arm/build/waveshare_servos': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/suvi/poc_arm/build/waveshare_servos
+[0.102s] -- Install configuration: ""
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/waveshare_servos.xml
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/SCS.h
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/visibility_controls.h
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/SCSerial.h
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/INST.h
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/SMS_STS.h
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/SCServo.h
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/waveshare_servos.hpp
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/SMSBL.h
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/SCSCL.h
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/include/waveshare_servos/SMSCL.h
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/description/ros2_control
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/description/ros2_control/example.ros2_control.xacro
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/description/urdf
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/description/urdf/example.urdf.xacro
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/launch
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/launch/example.launch.py
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/config
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/config/example_controllers.yaml
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/lib/libwaveshare_servos.so
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/lib/waveshare_servos/set_id
+[0.102s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/lib/waveshare_servos/calibrate_midpoint
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/environment/library_path.sh
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/environment/library_path.dsv
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/ament_index/resource_index/package_run_dependencies/waveshare_servos
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/ament_index/resource_index/parent_prefix_path/waveshare_servos
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/environment/ament_prefix_path.sh
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/environment/ament_prefix_path.dsv
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/environment/path.sh
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/environment/path.dsv
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/local_setup.bash
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/local_setup.sh
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/local_setup.zsh
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/local_setup.dsv
+[0.103s] -- Installing: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/package.dsv
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/ament_index/resource_index/packages/waveshare_servos
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/waveshare_servos
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/cmake/export_waveshare_servosExport.cmake
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/cmake/export_waveshare_servosExport-noconfig.cmake
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/cmake/ament_cmake_export_targets-extras.cmake
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/cmake/waveshare_servosConfig.cmake
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/cmake/waveshare_servosConfig-version.cmake
+[0.103s] -- Up-to-date: /home/suvi/poc_arm/install/waveshare_servos/share/waveshare_servos/package.xml
+[0.106s] Invoked command in '/home/suvi/poc_arm/build/waveshare_servos' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/suvi/poc_arm/build/waveshare_servos
