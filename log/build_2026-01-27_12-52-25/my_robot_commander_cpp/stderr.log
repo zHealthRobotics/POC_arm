@@ -1,7 +1,0 @@
-[01m[K/home/suvi/poc_arm/src/my_robot_commander_cpp/src/task_manager.cpp:3:10:[m[K [01;31m[Kfatal error: [m[Kexample_interfaces/msg/float64_multi_array.hpp: No such file or directory
-    3 | #include [01;31m[K<example_interfaces/msg/float64_multi_array.hpp>[m[K
-      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
-compilation terminated.
-gmake[2]: *** [CMakeFiles/task_manager.dir/build.make:76: CMakeFiles/task_manager.dir/src/task_manager.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:221: CMakeFiles/task_manager.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2

@@ -1,8 +1,0 @@
-[01m[K/home/suvi/poc_arm/src/my_robot_commander_cpp/src/pose_printer.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
-[01m[K/home/suvi/poc_arm/src/my_robot_commander_cpp/src/pose_printer.cpp:23:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass moveit::planning_interface::MoveGroupInterface[m[K’ has no member named ‘[01m[KwaitForCurrentState[m[K’; did you mean ‘[01m[KgetCurrentState[m[K’?
-   23 |   move_group.[01;31m[KwaitForCurrentState[m[K(rclcpp::Clock().now(), 5.0);
-      |              [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
-      |              [32m[KgetCurrentState[m[K
-gmake[2]: *** [CMakeFiles/print_current_pose.dir/build.make:76: CMakeFiles/print_current_pose.dir/src/pose_printer.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/print_current_pose.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2

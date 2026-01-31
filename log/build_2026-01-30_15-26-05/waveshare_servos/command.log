@@ -1,6 +1,0 @@
-Invoking command in '/home/suvi/poc_arm/build/waveshare_servos': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/suvi/poc_arm/src/waveshare_servos -DCMAKE_INSTALL_PREFIX=/home/suvi/poc_arm/install/waveshare_servos
-Invoked command in '/home/suvi/poc_arm/build/waveshare_servos' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/suvi/poc_arm/src/waveshare_servos -DCMAKE_INSTALL_PREFIX=/home/suvi/poc_arm/install/waveshare_servos
-Invoking command in '/home/suvi/poc_arm/build/waveshare_servos': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/suvi/poc_arm/build/waveshare_servos -- -j12 -l12
-Invoked command in '/home/suvi/poc_arm/build/waveshare_servos' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/suvi/poc_arm/build/waveshare_servos -- -j12 -l12
-Invoking command in '/home/suvi/poc_arm/build/waveshare_servos': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/suvi/poc_arm/build/waveshare_servos
-Invoked command in '/home/suvi/poc_arm/build/waveshare_servos' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/suvi/poc_arm/build/waveshare_servos
