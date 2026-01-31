@@ -232,7 +232,8 @@
 				"launch",
 				"rviz",
 				"urdf",
-				"meshes"
+				"meshes",
+				"config"
 			],
 			"type" : "directory"
 		},

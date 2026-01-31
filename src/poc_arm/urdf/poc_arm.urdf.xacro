@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="my_robot">
+
+  <!-- Robot geometry + joints -->
+  <xacro:include filename="$(find poc_arm)/urdf/poc_arm_real.urdf.xacro" />
+
+  <!-- ros2_control for Real arm -->
+  <xacro:include filename="$(find poc_arm)/urdf/poc_arm_ros2_control_real.xacro" />
+
+  <!-- Instantiate ros2_control system -->
+  <xacro:poc_arm_ros2_control_real name="WaveshareArm"/>
+
+</robot>
+

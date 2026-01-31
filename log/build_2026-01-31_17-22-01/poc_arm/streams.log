@@ -1,0 +1,43 @@
+[0.007s] Invoking command in '/home/suvi/poc_arm/build/poc_arm': CMAKE_PREFIX_PATH=/home/suvi/poc_arm/install/waveshare_servos:/home/suvi/poc_arm/install/poc_moveit_config:/home/suvi/poc_arm/install/poc_arm:/home/suvi/poc_arm/install/realsense_gazebo:/home/suvi/poc_arm/install/my_robot_commander_cpp:/home/suvi/poc_arm/install/my_robot_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/suvi/poc_arm/install/waveshare_servos/lib:/home/suvi/poc_arm/install/my_robot_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --build /home/suvi/poc_arm/build/poc_arm -- -j12 -l12
+[0.032s] Invoked command in '/home/suvi/poc_arm/build/poc_arm' returned '0': CMAKE_PREFIX_PATH=/home/suvi/poc_arm/install/waveshare_servos:/home/suvi/poc_arm/install/poc_moveit_config:/home/suvi/poc_arm/install/poc_arm:/home/suvi/poc_arm/install/realsense_gazebo:/home/suvi/poc_arm/install/my_robot_commander_cpp:/home/suvi/poc_arm/install/my_robot_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/suvi/poc_arm/install/waveshare_servos/lib:/home/suvi/poc_arm/install/my_robot_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --build /home/suvi/poc_arm/build/poc_arm -- -j12 -l12
+[0.033s] Invoking command in '/home/suvi/poc_arm/build/poc_arm': CMAKE_PREFIX_PATH=/home/suvi/poc_arm/install/waveshare_servos:/home/suvi/poc_arm/install/poc_moveit_config:/home/suvi/poc_arm/install/poc_arm:/home/suvi/poc_arm/install/realsense_gazebo:/home/suvi/poc_arm/install/my_robot_commander_cpp:/home/suvi/poc_arm/install/my_robot_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/suvi/poc_arm/install/waveshare_servos/lib:/home/suvi/poc_arm/install/my_robot_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --install /home/suvi/poc_arm/build/poc_arm
+[0.039s] -- Install configuration: ""
+[0.039s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/launch
+[0.039s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/launch/display.launch.xml
+[0.039s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/launch/poc_bringup.launch.py
+[0.039s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/rviz
+[0.039s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/rviz/urdf_config.rviz
+[0.039s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/urdf
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/urdf/camera_rgbd_real.xacro
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/urdf/poc_arm.urdf.xacro
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/urdf/poc_arm_sim.urdf.xacro
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/urdf/poc_arm_real.urdf.xacro
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/urdf/camera_rgbd.xacro
+[0.040s] -- Installing: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/urdf/poc_arm_ros2_control_real.xacro
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/shoulder_roll_link.STL
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/shoulder_yaw_link.STL
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/wrist_yaw_link.STL
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/wrist_pitch_link.STL
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/shoulder_base_link.STL
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/shoulder_pitch_link.STL
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/wrist_roll_link.STL
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/meshes/elbow_link.STL
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/config
+[0.040s] -- Installing: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/config/ros2_controllers.yaml
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/ament_index/resource_index/package_run_dependencies/poc_arm
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/ament_index/resource_index/parent_prefix_path/poc_arm
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/environment/ament_prefix_path.sh
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/environment/ament_prefix_path.dsv
+[0.040s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/environment/path.sh
+[0.041s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/environment/path.dsv
+[0.041s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/local_setup.bash
+[0.041s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/local_setup.sh
+[0.041s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/local_setup.zsh
+[0.041s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/local_setup.dsv
+[0.041s] -- Installing: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/package.dsv
+[0.041s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/ament_index/resource_index/packages/poc_arm
+[0.041s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/cmake/poc_armConfig.cmake
+[0.041s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/cmake/poc_armConfig-version.cmake
+[0.041s] -- Up-to-date: /home/suvi/poc_arm/install/poc_arm/share/poc_arm/package.xml
+[0.042s] Invoked command in '/home/suvi/poc_arm/build/poc_arm' returned '0': CMAKE_PREFIX_PATH=/home/suvi/poc_arm/install/waveshare_servos:/home/suvi/poc_arm/install/poc_moveit_config:/home/suvi/poc_arm/install/poc_arm:/home/suvi/poc_arm/install/realsense_gazebo:/home/suvi/poc_arm/install/my_robot_commander_cpp:/home/suvi/poc_arm/install/my_robot_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/suvi/poc_arm/install/waveshare_servos/lib:/home/suvi/poc_arm/install/my_robot_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --install /home/suvi/poc_arm/build/poc_arm

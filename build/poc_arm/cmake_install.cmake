@@ -48,6 +48,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/suvi/poc_arm/src/poc_arm/rviz"
     "/home/suvi/poc_arm/src/poc_arm/urdf"
     "/home/suvi/poc_arm/src/poc_arm/meshes"
+    "/home/suvi/poc_arm/src/poc_arm/config"
     )
 endif()
 
