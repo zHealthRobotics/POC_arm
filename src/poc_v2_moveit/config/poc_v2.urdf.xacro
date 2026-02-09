@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="poc_v2">
+
+  <!-- Robot geometry + joints -->
+  <xacro:include filename="$(find poc_v2)/urdf/camera_rgbd.xacro"/>
+  <xacro:include filename="$(find poc_v2)/urdf/poc_arm_sim.urdf.xacro"/>
+
+  <xacro:rgbd_camera
+    parent="torso_link"
+    xyz="0.015 0 1.15"
+    rpy="0 0.45 0"/>    
+
+  <!-- ros2_control for Gazebo -->
+  <xacro:include filename="poc_v2.ros2_control.xacro" />
+
+  <!-- Instantiate ros2_control system -->
+  <xacro:poc_v2_ros2_control_gazebo name="GazeboSystem"/>
+
+  <!-- Gazebo ros2_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+      <parameters>
+        $(find poc_v2_moveit)/config/ros2_controllers.yaml
+      </parameters>
+    </plugin>
+  </gazebo>
+
+</robot>

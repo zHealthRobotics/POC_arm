@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="poc_v2">
+
+  <!-- Robot geometry + joints -->
+  <xacro:include filename="$(find poc_v2)/urdf/camera_rgbd_real.xacro"/>
+  <xacro:include filename="$(find poc_v2)/urdf/poc_arm_real.urdf.xacro" />
+  
+  <xacro:rgbd_camera
+    parent="torso_link"
+    xyz="0.015 0 1.15"
+    rpy="0 0.45 0"/>    
+
+  <!-- ros2_control for Real arm -->
+  <xacro:include filename="$(find poc_v2)/urdf/poc_arm_ros2_control_real.xacro" />
+
+  <!-- Instantiate ros2_control system -->
+  <xacro:poc_arm_ros2_control_real name="WaveshareArm"/>
+
+</robot>

@@ -11,7 +11,7 @@
       <joint name="joint1">
         <param name="id">1</param>
         <param name="type">pos</param>
-        <param name="offset">0.0</param>
+        <param name="offset">3.14159265359</param>
 
         <command_interface name="position"/>
         <state_interface name="position"/>

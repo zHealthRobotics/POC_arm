@@ -220,8 +220,8 @@ hardware_interface::return_type WaveshareServos::read(
 	for (size_t i = 0; i < all_ids_.size(); i++)
 	{
 		double raw_pos = get_position(all_ids_[i]);
-    	pos_states_[i] = raw_pos - pos_offsets_[i];
-		vel_states_[i] = get_velocity(all_ids_[i]);
+    	        pos_states_[i] = -(raw_pos - pos_offsets_[i]);
+		vel_states_[i] = -(get_velocity(all_ids_[i]));
 		torq_states_[i] = get_torque(all_ids_[i]);
 		temp_states_[i] = get_temperature(all_ids_[i]);
 	}
@@ -233,7 +233,7 @@ hardware_interface::return_type WaveshareServos::write(
 {
 	for (size_t i = 0; i < pos_is_.size(); i++)
 	{
-		double pos = pos_cmds_[pos_is_[i]] + pos_offsets_[pos_is_[i]];
+		double pos = -(pos_cmds_[pos_is_[i]]) + pos_offsets_[pos_is_[i]];
 		p_pos_ar_[i] = (pos * steps_) / (2 * M_PI);
 		p_vel_ar_[i] = (vel_cmds_[pos_is_[i]] * steps_) / (2 * M_PI);
 	}

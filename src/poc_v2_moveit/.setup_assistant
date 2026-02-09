@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: poc_v2
+    relative_path: urdf/poc_arm_real.urdf.xacro
+  srdf:
+    relative_path: config/poc_v2.srdf
+  package_settings:
+    author_name: suvi
+    author_email: suvi@todo.com
+    generated_timestamp: 1770446754
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
