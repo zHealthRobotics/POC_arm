@@ -1,60 +1,60 @@
 #include <rclcpp/rclcpp.hpp>
-#include <moveit/move_group_interface/move_group_interface.h>
-#include <thread>
+#include <tf2_ros/transform_listener.h>
+#include <tf2_ros/buffer.h>
+#include <geometry_msgs/msg/transform_stamped.hpp>
 
-int main(int argc, char** argv)
+class EndEffectorTF : public rclcpp::Node
 {
-  rclcpp::init(argc, argv);
-
-  auto node = rclcpp::Node::make_shared("print_current_pose_node");
-  node->set_parameter(rclcpp::Parameter("use_sim_time", false));
-
-  // --- Executor (REQUIRED) ---
-  rclcpp::executors::SingleThreadedExecutor executor;
-  executor.add_node(node);
-
-  std::thread spinner([&executor]() {
-    executor.spin();
-  });
-
-  static const std::string PLANNING_GROUP = "arm";
-  moveit::planning_interface::MoveGroupInterface move_group(node, PLANNING_GROUP);
-
-  // ---- Wait until joint states are received ----
-  moveit::core::RobotStatePtr current_state;
-  rclcpp::Time start = node->now();
-
-  while (rclcpp::ok() && !current_state)
+public:
+  EndEffectorTF() : Node("ee_tf_node")
   {
-    current_state = move_group.getCurrentState(1.0);
+    tf_buffer_ = std::make_shared<tf2_ros::Buffer>(this->get_clock());
+    tf_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
 
-    if ((node->now() - start).seconds() > 5.0)
+    timer_ = this->create_wall_timer(
+      std::chrono::seconds(1),
+      std::bind(&EndEffectorTF::printPose, this));
+  }
+
+private:
+  void printPose()
+  {
+    try
     {
-      RCLCPP_ERROR(node->get_logger(), "Timeout waiting for robot state");
-      rclcpp::shutdown();
-      spinner.join();
-      return 1;
+      auto tf = tf_buffer_->lookupTransform(
+        "torso_link",        // reference
+        "wrist_yaw_link",    // end effector
+        tf2::TimePointZero  // latest
+      );
+
+      RCLCPP_INFO(this->get_logger(),
+        "EE pose:\n"
+        "Position: [%.3f %.3f %.3f]\n"
+        "Orientation: [%.3f %.3f %.3f %.3f]",
+        tf.transform.translation.x,
+        tf.transform.translation.y,
+        tf.transform.translation.z,
+        tf.transform.rotation.x,
+        tf.transform.rotation.y,
+        tf.transform.rotation.z,
+        tf.transform.rotation.w);
+    }
+    catch (const tf2::TransformException &ex)
+    {
+      RCLCPP_WARN(this->get_logger(), "%s", ex.what());
     }
   }
 
-  // ---- Get current EE pose ----
-  auto pose = move_group.getCurrentPose();
+  rclcpp::TimerBase::SharedPtr timer_;
+  std::shared_ptr<tf2_ros::Buffer> tf_buffer_;
+  std::shared_ptr<tf2_ros::TransformListener> tf_listener_;
+};
 
-  RCLCPP_INFO(node->get_logger(),
-    "Current EE pose:\n"
-    "Position: [%.3f, %.3f, %.3f]\n"
-    "Orientation: [%.3f, %.3f, %.3f, %.3f]",
-    pose.pose.position.x,
-    pose.pose.position.y,
-    pose.pose.position.z,
-    pose.pose.orientation.x,
-    pose.pose.orientation.y,
-    pose.pose.orientation.z,
-    pose.pose.orientation.w
-  );
-
+int main(int argc, char **argv)
+{
+  rclcpp::init(argc, argv);
+  rclcpp::spin(std::make_shared<EndEffectorTF>());
   rclcpp::shutdown();
-  spinner.join();
   return 0;
 }
 

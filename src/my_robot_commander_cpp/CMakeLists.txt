@@ -24,6 +24,7 @@ add_executable(print_current_pose src/pose_printer.cpp)
 ament_target_dependencies(print_current_pose
   rclcpp
   moveit_ros_planning_interface
+  std_srvs
 )
 
 add_executable(task_manager src/task_manager.cpp)

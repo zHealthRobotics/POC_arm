@@ -89,10 +89,10 @@ private:
         {
             RCLCPP_INFO(this->get_logger(), "Approach execution DONE");
 
-            std_msgs::msg::Bool lock;
-            lock.data = true;
-            lock_orientation_pub_->publish(lock);
-            rclcpp::sleep_for(std::chrono::milliseconds(200));
+//            std_msgs::msg::Bool lock;
+//            lock.data = true;
+//            lock_orientation_pub_->publish(lock);
+//            rclcpp::sleep_for(std::chrono::milliseconds(200));
             sendReachPourCommand();
             state_ = TaskState::REACH_POUR;
             RCLCPP_INFO(this->get_logger(), "State → REACH_POUR");
@@ -117,9 +117,9 @@ private:
         {
             RCLCPP_INFO(this->get_logger(), "Reset orientation DONE");
             
-            std_msgs::msg::Bool clear;
-            clear.data = true;
-            clear_constraints_pub_->publish(clear);                 
+//            std_msgs::msg::Bool clear;
+//            clear.data = true;
+//            clear_constraints_pub_->publish(clear);                 
             
             sendPlaceCommand();
             state_ = TaskState::PLACE;

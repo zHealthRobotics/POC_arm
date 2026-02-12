@@ -120,7 +120,7 @@ public:
         }
     }
 
-    void lockEndEffectorOrientation(double tol = 0.3)
+    void lockEndEffectorOrientation(double tol = 1.2)
     {
         moveit_msgs::msg::OrientationConstraint ocm;
 

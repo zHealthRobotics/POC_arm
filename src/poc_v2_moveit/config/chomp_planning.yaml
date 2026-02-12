@@ -1,0 +1,11 @@
+move_group:
+  ros__parameters:
+
+    chomp:
+      planning_plugin: "chomp_interface/CHOMPPlanner"
+
+      planning_time_limit: 5.0
+      max_iterations: 200
+      smoothness_cost_weight: 0.1
+      obstacle_cost_weight: 1.0
+

@@ -1,3 +1,4 @@
+import os
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -5,7 +6,6 @@ from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 
 from moveit_configs_utils import MoveItConfigsBuilder
-
 
 def generate_launch_description():
 
@@ -16,6 +16,13 @@ def generate_launch_description():
         )
         .to_moveit_configs()
     )
+    
+    ompl_yaml = os.path.join(
+        get_package_share_directory("poc_v2_moveit"),
+        "config",
+        "ompl_planning.yaml"
+    )
+    
 
     bringup_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -29,7 +36,8 @@ def generate_launch_description():
         executable="move_group",
         output="screen",
         parameters=[
-            moveit_config.to_dict(),
+            moveit_config.to_dict(),  
+            ompl_yaml,    
         ],
     )
 

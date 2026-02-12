@@ -50,8 +50,8 @@
 
   <xacro:rgbd_camera
     parent="torso_link"
-    xyz="0.015 0 0.75"
-    rpy="0 0.45 0"/>
+    xyz="0.5 0 0.35"
+    rpy="0 0 3.14"/>
 
   <link
     name="shoulder_base_link">

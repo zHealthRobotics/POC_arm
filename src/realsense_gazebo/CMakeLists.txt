@@ -27,7 +27,9 @@ install(
 install(
   PROGRAMS
     scripts/yolo_world_node.py
+    scripts/transform.py
     scripts/base_yolow.py
+    scripts/current_plotter.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

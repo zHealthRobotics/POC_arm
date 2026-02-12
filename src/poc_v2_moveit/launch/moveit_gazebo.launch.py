@@ -1,3 +1,4 @@
+import os
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -16,6 +17,13 @@ def generate_launch_description():
         )
         .to_moveit_configs()
     )
+    
+    ompl_yaml = os.path.join(
+        get_package_share_directory("poc_v2_moveit"),
+        "config",
+        "ompl_planning.yaml"
+    )
+    
 
     gazebo_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -31,6 +39,7 @@ def generate_launch_description():
         output="screen",
         parameters=[
             moveit_config.to_dict(),
+            ompl_yaml,
             {"use_sim_time": True},
         ],
     )

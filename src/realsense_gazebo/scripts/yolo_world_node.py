@@ -52,7 +52,7 @@ class YoloWorldNode(Node):
         self.create_subscription(CameraInfo, "/camera/camera_info", self.camera_info_callback, 10)
 
         # --- Publisher ---
-        self.pose_pub = self.create_publisher(PoseCommand, "/detected_target_pose", 10)
+        self.pose_pub = self.create_publisher(PoseCommand, "/pose_command", 10)
         self.debug_img_pub = self.create_publisher(Image, "/yolo/debug_image", 10)
 
         self.get_logger().info("YOLO-World node ready (with 0.4 rad Tilt Correction)")
@@ -172,7 +172,7 @@ class YoloWorldNode(Node):
                         cmd_msg.y = float(point_torso.point.y - 0.01)
                         cmd_msg.z = float(point_torso.point.z + 0.07)
                         cmd_msg.roll = 0.0
-                        cmd_msg.pitch = 0.0
+                        cmd_msg.pitch = 1.57
                         cmd_msg.yaw = 0.0
                         cmd_msg.cartesian_path = False  # ALWAYS false in YOLO
 
