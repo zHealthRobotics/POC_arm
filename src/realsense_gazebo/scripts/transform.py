@@ -59,9 +59,9 @@ class CameraToTorsoTFNode(Node):
 
         # ---- Publish PoseCommand ----
         cmd = PoseCommand()
-        cmd.x = float(point_torso.point.x)
+        cmd.x = float(point_torso.point.x - 0.04)
         cmd.y = float(point_torso.point.y - 0.1)
-        cmd.z = float(point_torso.point.z + 0.15)
+        cmd.z = float(point_torso.point.z + 0.1)
 
         # Fixed orientation (safe default for MoveIt)
         cmd.roll = -1.57

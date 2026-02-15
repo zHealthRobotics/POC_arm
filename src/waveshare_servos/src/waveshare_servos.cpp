@@ -292,8 +292,8 @@ double WaveshareServos::get_velocity(int ID)
 
 double WaveshareServos::get_torque(int ID)
 {
-    // ReadCurrent(ID) return unitless value, multiply by static current (6mA)
-    double current = sm_st.ReadCurrent(ID) * 6.0 / 1000.0;
+    // ReadCurrent(ID) return unitless value, multiply by static current (6.5mA)
+    double current = sm_st.ReadCurrent(ID) * 6.5 / 1000.0;
     return current;
 }
 

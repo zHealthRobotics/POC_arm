@@ -23,10 +23,10 @@ move_group:
 
         RRTstarkConfigDefault:
           type: geometric::RRTstar
-          #range: 0.5
+          range: 0.5
           #goal_bias: 1.0
           #delay_collision_checking: 1
 
-        arm:
-          default_planner_config: RRTConnectkConfigDefault
-          #planning_time: 3.0
+      arm:
+        default_planner_config: RRTstarkConfigDefault
+        #planning_time: 3.0
