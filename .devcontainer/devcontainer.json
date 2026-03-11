@@ -1,0 +1,16 @@
+{
+    "name": "ROS2 Humble Workspace",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "ros2",
+    "workspaceFolder": "/ros2_ws",
+
+    "extensions": [
+        "ms-iot.vscode-ros",
+        "ms-python.python",
+        "ms-vscode.cpptools"
+    ],
+
+    "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+    }
+}

@@ -5,37 +5,17 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# ========================
-# Find dependencies
-# ========================
 find_package(ament_cmake REQUIRED)
 
-# ========================
-# Install non-code assets
-# ========================
-install(
-  DIRECTORY
-    launch
-    worlds
-    models
-  DESTINATION share/${PROJECT_NAME}
-)
 
-# ========================
 # Install Python nodes
-# ========================
 install(
-  PROGRAMS
-    scripts/yolo_world_node.py
-    scripts/transform.py
-    scripts/base_yolow.py
-    scripts/current_plotter.py
+  DIRECTORY scripts/
   DESTINATION lib/${PROJECT_NAME}
+  USE_SOURCE_PERMISSIONS
 )
 
-# ========================
-# Testing (unchanged)
-# ========================
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   set(ament_cmake_copyright_FOUND TRUE)

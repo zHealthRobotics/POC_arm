@@ -92,7 +92,16 @@ def generate_launch_description():
         cmd=[
             'ros2', 'control', 'load_controller',
             '--set-state', 'active',
-            'arm_controller'
+            'arm_trajectory_controller'
+        ],
+        output='screen'
+    )
+
+    load_arm_effort_controller = ExecuteProcess(
+        cmd=[
+            'ros2', 'control', 'load_controller',
+            '--set-state', 'active',
+            'arm_effort_controller'
         ],
         output='screen'
     )
@@ -108,7 +117,8 @@ def generate_launch_description():
                 target_action=spawn_entity,
                 on_exit=[
                     load_joint_state_broadcaster,
-                    load_arm_controller
+                    #load_arm_controller,
+                    load_arm_effort_controller
                 ]
             )
         )

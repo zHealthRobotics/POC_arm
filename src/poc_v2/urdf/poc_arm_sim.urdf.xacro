@@ -1,513 +1,310 @@
 <?xml version="1.0" encoding="utf-8"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="poc_v2">
-
+<robot name="poc_v2">
   <material name="grey">
-      <color rgba="0.5 0.5 0.5 1" />
+    <color rgba="0.5 0.5 0.5 1" />
   </material>
-
   <material name="blue">
-      <color rgba="0 0 0.5 1" />
+    <color rgba="0 0 0.5 1" />
   </material>
-
   <material name="green">
-      <color rgba="0 0.4 0 1" />
-  </material>    
-  
-  <!-- Torso / base box -->
-  <!-- Torso / base box -->
-  <link name="torso_link">
+    <color rgba="0 0.4 0 1" />
+  </material>
+  <link name="base_link">
     <inertial>
-      <origin xyz="0 0 0.45" rpy="0 0 0"/>
-      <mass value="2500"/>
-      <inertia
-        ixx="2" ixy="2" ixz="2"
-        iyy="2" iyz="2"
-        izz="2"/>
+      <origin rpy="0 0 0" xyz="0 0 0.2" />
+      <mass value="80.679624999999998" />
+      <inertia ixx="0.8036489742750001" ixy="0.0" ixz="0.0" iyy="0.8036489742750001" iyz="0.0" izz="0.5785809749999999" />
     </inertial>
-
     <visual>
-      <origin xyz="0 0 0.45" rpy="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.2" />
       <geometry>
-        <!-- size = X Y Z -->
-        <box size="0.06 0.03 0.89"/>
+        <box size="0.3 0.3 0.4" />
       </geometry>
-      <material name="torso_color">
-        <color rgba="1 0.71 0.75 1"/>
+      <material name="base_color">
+        <color rgba="0.1 0.7 0.5 1" />
       </material>
     </visual>
-
     <collision>
-      <origin xyz="0 0 0.45" rpy="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.2" />
       <geometry>
-        <box size="0.06 0.03 0.89"/>
-      </geometry>
-    </collision>
-  </link>  
-  
-  
-  <link
-    name="shoulder_base_link">
-    <inertial>
-      <origin
-        xyz="9.7487E-05 -0.0077102 -0.018086"
-        rpy="0 0 0" />
-      <mass
-        value="0.065158" />
-      <inertia
-        ixx="1.3277E-05"
-        ixy="3.3229E-10"
-        ixz="4.3851E-09"
-        iyy="1.8778E-05"
-        iyz="2.5265E-07"
-        izz="7.015E-06" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/shoulder_base_link.STL" />
-      </geometry>
-      <material name="grey"/>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/shoulder_base_link.STL" />
+        <box size="0.3 0.3 0.4" />
       </geometry>
     </collision>
   </link>
-  
-  <!-- torso -> shoulder_base_link fixed -->
+  <link name="torso_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.45" />
+      <mass value="4.9199062499999995" />
+      <inertia ixx="0.6364390724999999" ixy="0.0" ixz="0.0" iyy="0.6364390724999999" iyz="0.0" izz="0.019286032499999994" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.45" />
+      <geometry>
+        <box size="0.06 0.03 0.89" />
+      </geometry>
+      <material name="torso_color">
+        <color rgba="1 0.71 0.75 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.45" />
+      <geometry>
+        <box size="0.06 0.03 0.89" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_to_torso" type="fixed">
+    <parent link="base_link" />
+    <child link="torso_link" />
+    <origin rpy="0 0 0" xyz="0 0 0.4" />
+  </joint>
+  <link name="shoulder_base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="9.7487E-05 -0.0077102 -0.018086" />
+      <mass value="0.0641142502875" />
+      <inertia ixx="2.5606065350249994e-05" ixy="6.408555739425e-10" ixz="8.457118111574997e-09" iyy="3.621531182849999e-05" iyz="4.872616111124998e-07" izz="1.352915179875e-05" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/shoulder_base_link.STL" />
+      </geometry>
+      <material name="grey" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/shoulder_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
   <joint name="torso_to_shoulder_base" type="fixed">
-    <parent link="torso_link"/>
-    <child link="shoulder_base_link"/>
-    <!-- adjust this offset to place your arm on top of torso -->
-    <origin xyz="0 0 0.93" rpy="0 0 0"/>
-  </joint>  
-  
-  <link
-    name="shoulder_pitch_link">
+    <parent link="torso_link" />
+    <child link="shoulder_base_link" />
+    <origin rpy="0 0 0" xyz="0 0 0.93" />
+  </joint>
+  <link name="shoulder_pitch_link">
     <inertial>
-      <origin
-        xyz="-4.3944E-05 -0.027448 -0.00011001"
-        rpy="0 0 0" />
-      <mass
-        value="0.058226" />
-      <inertia
-        ixx="9.1701E-06"
-        ixy="4.611E-09"
-        ixz="-3.6339E-10"
-        iyy="4.5864E-06"
-        iyz="-1.102E-09"
-        izz="8.3506E-06" />
+      <origin rpy="0 0 0" xyz="-4.3944E-05 -0.027448 -0.00011001" />
+      <mass value="0.0572932922625" />
+      <inertia ixx="1.7685484662824994e-05" ixy="8.89278958575e-09" ixz="-7.008351350174998e-10" iyy="8.845345945799997e-06" iyz="-2.1253207814999994e-09" izz="1.6104994299449995e-05" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh
-          filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/shoulder_pitch_link.STL" />
+        <mesh filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/shoulder_pitch_link.STL" />
       </geometry>
-      <material name="blue"/>
+      <material name="blue" />
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh
-          filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/shoulder_pitch_link.STL" />
+        <mesh filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/shoulder_pitch_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="shoulder_pitch_joint"
-    type="revolute">
-    <origin
-      xyz="0 -0.039425 0"
-      rpy="0 0 0" />
-    <parent
-      link="shoulder_base_link" />
-    <child
-      link="shoulder_pitch_link" />
-    <axis
-      xyz="0 -1 0" />
-    <limit
-      lower="-1.5708"
-      upper="1.5708"
-      effort="3"
-      velocity="4.7124" />
+  <joint name="shoulder_pitch_joint" type="revolute">
+    <origin rpy="0 0 0" xyz="0 -0.039425 0" />
+    <parent link="shoulder_base_link" />
+    <child link="shoulder_pitch_link" />
+    <axis xyz="0 -1 0" />
+    <limit effort="8" lower="-1.5708" upper="1.5708" velocity="4.7124" />
+    <dynamics damping="0.05" friction="0.2"/>
   </joint>
-  <link
-    name="shoulder_yaw_link">
+  <link name="shoulder_yaw_link">
     <inertial>
-      <origin
-        xyz="4.1777E-05 -0.022349 -0.037122"
-        rpy="0 0 0" />
-      <mass
-        value="0.07816" />
-      <inertia
-        ixx="1.7538E-05"
-        ixy="1.1171E-09"
-        ixz="-6.0564E-10"
-        iyy="1.2384E-05"
-        iyz="-2.1123E-06"
-        izz="1.5499E-05" />
+      <origin rpy="0 0 0" xyz="4.1777E-05 -0.022349 -0.037122" />
+      <mass value="0.07690797449999998" />
+      <inertia ixx="3.3823843798499996e-05" ixy="2.1544426905749998e-09" ixz="-1.1680392723299995e-09" iyy="2.3883822647999988e-05" iyz="-4.073788644975e-06" izz="2.9891421771749984e-05" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh
-          filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/shoulder_yaw_link.STL" />
+        <mesh filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/shoulder_yaw_link.STL" />
       </geometry>
-      <material name="green"/>
+      <material name="green" />
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh
-          filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/shoulder_yaw_link.STL" />
+        <mesh filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/shoulder_yaw_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="shoulder_yaw_joint"
-    type="revolute">
-    <origin
-      xyz="0 -0.047424 0"
-      rpy="0 0 0" />
-    <parent
-      link="shoulder_pitch_link" />
-    <child
-      link="shoulder_yaw_link" />
-    <axis
-      xyz="-1 0 0" />
-    <limit
-      lower="-1.5708"
-      upper="1.5708"
-      effort="3"
-      velocity="4.7124" />
+  <joint name="shoulder_yaw_joint" type="revolute">
+    <origin rpy="0 0 0" xyz="0 -0.047424 0" />
+    <parent link="shoulder_pitch_link" />
+    <child link="shoulder_yaw_link" />
+    <axis xyz="-1 0 0" />
+    <limit effort="8" lower="-1.5708" upper="1.5708" velocity="4.7124" />
+    <dynamics damping="0.05" friction="0.2"/>    
   </joint>
-  <link
-    name="shoulder_roll_link">
+  <link name="shoulder_roll_link">
     <inertial>
-      <origin
-        xyz="0.00010503 -6.0033E-06 -0.046163"
-        rpy="0 0 0" />
-      <mass
-        value="0.062029" />
-      <inertia
-        ixx="1.0247E-05"
-        ixy="-7.3826E-10"
-        ixz="1.2386E-09"
-        iyy="1.1268E-05"
-        iyz="-4.5936E-09"
-        izz="4.7933E-06" />
+      <origin rpy="0 0 0" xyz="0.00010503 -6.0033E-06 -0.046163" />
+      <mass value="0.06103537295624999" />
+      <inertia ixx="1.9762397502749993e-05" ixy="-1.4238106353449998e-09" ixz="2.3887679854499997e-09" iyy="2.1731501420999993e-05" iyz="-8.859231889199999e-09" izz="9.244373958225e-06" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh
-          filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/shoulder_roll_link.STL" />
+        <mesh filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/shoulder_roll_link.STL" />
       </geometry>
-      <material name="grey"/>
+      <material name="grey" />
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh
-          filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/shoulder_roll_link.STL" />
+        <mesh filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/shoulder_roll_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="shoulder_roll_joint"
-    type="revolute">
-    <origin
-      xyz="0.000125 0 -0.08105"
-      rpy="0 0 0" />
-    <parent
-      link="shoulder_yaw_link" />
-    <child
-      link="shoulder_roll_link" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="-3.1416"
-      upper="3.1416"
-      effort="3"
-      velocity="4.7124" />
+  <joint name="shoulder_roll_joint" type="revolute">
+    <origin rpy="0 0 0" xyz="0.000125 0 -0.08105" />
+    <parent link="shoulder_yaw_link" />
+    <child link="shoulder_roll_link" />
+    <axis xyz="0 0 -1" />
+    <limit effort="8" lower="-3.1416" upper="3.1416" velocity="4.7124" />
   </joint>
-  <link
-    name="elbow_pitch_link">
+  <link name="elbow_pitch_link">
     <inertial>
-      <origin
-        xyz="-0.022349 -4.1658E-05 -0.03471"
-        rpy="0 0 0" />
-      <mass
-        value="0.07816" />
-      <inertia
-        ixx="1.2384E-05"
-        ixy="-1.0321E-09"
-        ixz="-2.112E-06"
-        iyy="1.7538E-05"
-        iyz="6.7704E-10"
-        izz="1.5499E-05" />
+      <origin rpy="0 0 0" xyz="-0.022349 -4.1658E-05 -0.03471" />
+      <mass value="0.07690797449999998" />
+      <inertia ixx="2.3883822647999988e-05" ixy="-1.9905114143249997e-09" ixz="-4.0732100639999995e-06" iyy="3.3823843798499996e-05" iyz="1.30574154438e-09" izz="2.9891421771749984e-05" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh
-          filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/elbow_pitch_link.STL" />
+        <mesh filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/elbow_pitch_link.STL" />
       </geometry>
-      <material name="blue"/>
+      <material name="blue" />
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh
-          filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/elbow_pitch_link.STL" />
+        <mesh filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/elbow_pitch_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="elbow_pitch_joint"
-    type="revolute">
-    <origin
-      xyz="0 0 -0.072424"
-      rpy="0 0 0" />
-    <parent
-      link="shoulder_roll_link" />
-    <child
-      link="elbow_pitch_link" />
-    <axis
-      xyz="0 1 0" />
-    <limit
-      lower="-1.5708"
-      upper="1.5708"
-      effort="3"
-      velocity="4.7124" />
+  <joint name="elbow_pitch_joint" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 -0.072424" />
+    <parent link="shoulder_roll_link" />
+    <child link="elbow_pitch_link" />
+    <axis xyz="0 1 0" />
+    <limit effort="8" lower="-1.5708" upper="1.5708" velocity="4.7124" />
+    <dynamics damping="0.05" friction="0.2"/>    
   </joint>
-  <link
-    name="wrist_roll_link">
+  <link name="wrist_roll_link">
     <inertial>
-      <origin
-        xyz="-0.0001094 0.00049455 -0.027472"
-        rpy="0 0 0" />
-      <mass
-        value="0.059835" />
-      <inertia
-        ixx="8.7489E-06"
-        ixy="-2.3214E-10"
-        ixz="-1.1318E-09"
-        iyy="9.6573E-06"
-        iyz="4.6966E-09"
-        izz="4.6776E-06" />
+      <origin rpy="0 0 0" xyz="-0.0001094 0.00049455 -0.027472" />
+      <mass value="0.05887651809374999" />
+      <inertia ixx="1.6873156973925e-05" ixy="-4.4770595845499995e-10" ixz="-2.1827931583499993e-09" iyy="1.8625100166224997e-05" iyz="9.057878023949999e-09" izz="9.021234562199998e-06" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh
-          filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/wrist_roll_link.STL" />
+        <mesh filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/wrist_roll_link.STL" />
       </geometry>
-      <material name="green"/>
+      <material name="green" />
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh
-          filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/wrist_roll_link.STL" />
+        <mesh filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/wrist_roll_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="wrist_roll_joint"
-    type="revolute">
-    <origin
-      xyz="0 -0.000125 -0.07805"
-      rpy="0 0 0" />
-    <parent
-      link="elbow_pitch_link" />
-    <child
-      link="wrist_roll_link" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="-3.1416"
-      upper="3.1416"
-      effort="3"
-      velocity="4.7124" />
+  <joint name="wrist_roll_joint" type="revolute">
+    <origin rpy="0 0 0" xyz="0 -0.000125 -0.07805" />
+    <parent link="elbow_pitch_link" />
+    <child link="wrist_roll_link" />
+    <axis xyz="0 0 -1" />
+    <limit effort="8" lower="-3.1416" upper="3.1416" velocity="4.7124" />
   </joint>
-  <link
-    name="wrist_pitch_link">
+  <link name="wrist_pitch_link">
     <inertial>
-      <origin
-        xyz="-1.2164E-05 -0.00021517 -0.040822"
-        rpy="0 0 0" />
-      <mass
-        value="0.065136" />
-      <inertia
-        ixx="1.2184E-05"
-        ixy="3.7721E-10"
-        ixz="-3.5858E-09"
-        iyy="9.7713E-06"
-        iyz="-1.0653E-09"
-        izz="7.7058E-06" />
+      <origin rpy="0 0 0" xyz="-1.2164E-05 -0.00021517 -0.040822" />
+      <mass value="0.0640926027" />
+      <inertia ixx="2.3498101998e-05" ixy="7.274884319324997e-10" ixz="-6.915585533849998e-09" iyy="1.8844960936725e-05" iyz="-2.0545410422249995e-09" izz="1.4861430923849993e-05" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh
-          filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/wrist_pitch_link.STL" />
+        <mesh filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/wrist_pitch_link.STL" />
       </geometry>
-      <material name="grey"/>
+      <material name="grey" />
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh
-          filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/wrist_pitch_link.STL" />
+        <mesh filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/wrist_pitch_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="wrist_pitch_joint"
-    type="revolute">
-    <origin
-      xyz="0 0 -0.047424"
-      rpy="0 0 0" />
-    <parent
-      link="wrist_roll_link" />
-    <child
-      link="wrist_pitch_link" />
-    <axis
-      xyz="0 -1 0" />
-    <limit
-      lower="-1.5708"
-      upper="1.5708"
-      effort="3"
-      velocity="4.7124" />
+  <joint name="wrist_pitch_joint" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 -0.047424" />
+    <parent link="wrist_roll_link" />
+    <child link="wrist_pitch_link" />
+    <axis xyz="0 -1 0" />
+    <limit effort="8" lower="-1.5708" upper="1.5708" velocity="4.7124" />
+    <dynamics damping="0.05" friction="0.2"/>
   </joint>
-  <link
-    name="wrist_yaw_link">
+  <link name="wrist_yaw_link">
     <inertial>
-      <origin
-        xyz="-0.00134389225503382 0.00410515462928857 -0.0264402444455359"
-        rpy="0 0 0" />
-      <mass
-        value="0.0153733484376505" />
-      <inertia
-        ixx="2.23369482968237E-06"
-        ixy="-6.06138545788461E-10"
-        ixz="3.24772205878924E-07"
-        iyy="4.98261144688796E-06"
-        iyz="4.19349180435978E-08"
-        izz="3.59994172004044E-06" />
+      <origin rpy="0 0 0" xyz="-0.00134389225503382 0.00410515462928857 -0.0264402444455359" />
+      <mass value="0.015127086612364886" />
+      <inertia ixx="4.3079111080336144e-06" ixy="-1.1690007693578997e-09" ixz="6.26356731767762e-07" iyy="9.609480629955317e-06" iyz="8.087581922736634e-08" izz="6.942859301080583e-06" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh
-          filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/wrist_yaw_link.STL" />
+        <mesh filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/wrist_yaw_link.STL" />
       </geometry>
-      <material name="blue"/>
+      <material name="blue" />
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh
-          filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/wrist_yaw_link.STL" />
+        <mesh filename="file:///home/suvi/poc_arm/install/poc_v2/share/poc_v2/meshes/wrist_yaw_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="wrist_yaw_joint"
-    type="revolute">
-    <origin
-      xyz="0 -0.000125 -0.064924"
-      rpy="0 0 0" />
-    <parent
-      link="wrist_pitch_link" />
-    <child
-      link="wrist_yaw_link" />
-    <axis
-      xyz="-1 0 0" />
-    <limit
-      lower="-1.5708"
-      upper="1.5708"
-      effort="3"
-      velocity="4.7124" />
+  <joint name="wrist_yaw_joint" type="revolute">
+    <origin rpy="0 0 0" xyz="0 -0.000125 -0.064924" />
+    <parent link="wrist_pitch_link" />
+    <child link="wrist_yaw_link" />
+    <axis xyz="-1 0 0" />
+    <limit effort="8" lower="-1.5708" upper="1.5708" velocity="4.7124" />
+    <dynamics damping="0.05" friction="0.2"/>
   </joint>
-  
-  
   <gazebo reference="torso_link">
-      <material>Gazebo/White</material>
+    <material>Gazebo/White</material>
   </gazebo>
-  
   <gazebo reference="camera_link">
-      <material>Gazebo/Black</material>
-  </gazebo>  
-
+    <material>Gazebo/Black</material>
+  </gazebo>
   <gazebo reference="shoulder_base_link">
-      <material>Gazebo/Grey</material>
+    <material>Gazebo/Grey</material>
   </gazebo>
-
   <gazebo reference="shoulder_pitch_link">
-      <material>Gazebo/Blue</material>
+    <material>Gazebo/Blue</material>
   </gazebo>
-
   <gazebo reference="shoulder_yaw_link">
-      <material>Gazebo/Green</material>
+    <material>Gazebo/Green</material>
   </gazebo>
-
   <gazebo reference="shoulder_roll_link">
-      <material>Gazebo/Yellow</material>
+    <material>Gazebo/Yellow</material>
   </gazebo>
-
-  <gazebo reference="elbow_link">
-      <material>Gazebo/Blue</material>
+  <gazebo reference="elbow_pitch_link">
+    <material>Gazebo/Blue</material>
   </gazebo>
-
   <gazebo reference="wrist_yaw_link">
-      <material>Gazebo/Green</material>
+    <material>Gazebo/Green</material>
   </gazebo>
-
   <gazebo reference="wrist_pitch_link">
-      <material>Gazebo/Grey</material>
+    <material>Gazebo/Grey</material>
   </gazebo>
-
   <gazebo reference="wrist_roll_link">
-      <material>Gazebo/Red</material>
-  </gazebo>  
-  
+    <material>Gazebo/Red</material>
+  </gazebo>
 </robot>

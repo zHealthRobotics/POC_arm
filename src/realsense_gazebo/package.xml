@@ -13,12 +13,9 @@
   <!-- Runtime dependencies (Python ROS nodes) -->
   <exec_depend>rclpy</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
-  <exec_depend>cv_bridge</exec_depend>
   <exec_depend>tf2_ros</exec_depend>
-  <exec_depend>mymy_robot_interfaces</exec_depend>
+  <exec_depend>my_robot_interfaces</exec_depend>
 
-  <!-- Gazebo -->
-  <exec_depend>gazebo_ros</exec_depend>
 
   <!-- Testing -->
   <test_depend>ament_lint_auto</test_depend>
