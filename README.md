@@ -57,7 +57,7 @@ wsl --install -d Ubuntu
 
 When prompted:
 Create a Unix username (example: office)
-Create a password
+Create a password (example: 0)
 
 ---
 
