@@ -1,5 +1,3 @@
----
-
 # Windows Setup Guide (WSL + Docker + ROS2)
 
 This guide explains how to run the **POC_arm ROS2 workspace** on **Windows using Docker and WSL**.
