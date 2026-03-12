@@ -27,11 +27,7 @@ During installation:
 * Launch Docker Desktop
 * Sign in or create a Docker account
 
-Wait until the bottom-left of Docker Desktop shows:
-
-```
-Engine running
-```
+Wait until the bottom-left of Docker Desktop shows: Engine running
 
 ---
 
@@ -60,11 +56,8 @@ wsl --install -d Ubuntu
 ```
 
 When prompted:
-
-```
 Create a Unix username (example: office)
 Create a password
-```
 
 ---
 
@@ -74,21 +67,11 @@ Open **Docker Desktop**.
 
 Go to:
 
-```
 Settings → Resources → WSL Integration
-```
 
-Enable:
+Enable toggle named Ubuntu
 
-```
-Ubuntu
-```
-
-Click:
-
-```
-Apply & Restart
-```
+Click: Apply & Restart
 
 ---
 
@@ -100,13 +83,13 @@ Open the **Ubuntu terminal** and run:
 sudo usermod -aG docker $USER
 ```
 
-Restart WSL:
+Restart WSL(In PowerShell):
 
 ```powershell
 wsl --shutdown
 ```
 
-Then open Ubuntu again.
+Then open Ubuntu again using: wsl
 
 ---
 
@@ -152,11 +135,8 @@ usbipd list
 
 Example output:
 
-```
 USB-Enhanced-SERIAL CH343 (COM5)
 BUSID: 2-3
-```
-
 Remember the **BUSID**.
 
 Bind the device:
@@ -200,16 +180,9 @@ ls /dev/ttyACM*
 ```
 
 You should see something like:
-
-```
 /dev/ttyACM0
-```
-
 or
-
-```
 /dev/ttyUSB0
-```
 
 ---
 
