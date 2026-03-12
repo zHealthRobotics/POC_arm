@@ -1,9 +1,3 @@
-Below is a **clean README-ready version** of your setup instructions.
-All commands are placed in **copy-paste friendly code blocks**, and the flow is organized so users can follow easily.
-(I also cleaned wording and grouped steps logically.)
-
-The instructions are based on the setup you provided .
-
 ---
 
 # Windows Setup Guide (WSL + Docker + ROS2)
@@ -332,5 +326,3 @@ ROS2 Workspace
 ```
 
 ---
-
-If you want, I can also give you a **much cleaner README layout used in robotics GitHub repos (with sections like Prerequisites, Quick Start, Hardware Setup, Troubleshooting)** so your repository looks **much more professional.
