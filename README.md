@@ -304,23 +304,3 @@ python3 servo.py
 ```
 
 ---
-
-# System Architecture
-
-```
-USB Device
-   ↓
-Windows
-   ↓
-usbipd
-   ↓
-WSL Ubuntu
-   ↓
-Docker Dev Container
-   ↓
-ROS2 Workspace
-   ↓
-/dev/ttyACM0
-```
-
----
