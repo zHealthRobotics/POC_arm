@@ -4,17 +4,7 @@ This guide explains how to run the **POC_arm ROS2 workspace** on **Windows using
 
 ---
 
-# 1. Clone the Repository
-
-Install Git if not already installed, then clone the repository.
-
-```bash
-git clone https://github.com/zHealthRobotics/POC_arm.git
-```
-
----
-
-# 2. Install Docker Desktop
+# 1. Install Docker Desktop
 
 Download and install Docker Desktop:
 
@@ -27,11 +17,11 @@ During installation:
 * Launch Docker Desktop
 * Sign in or create a Docker account
 
-Wait until the bottom-left of Docker Desktop shows: Engine running
+Wait until the bottom-left of Docker Desktop shows **Engine running**.
 
 ---
 
-# 3. Install WSL
+# 2. Install WSL
 
 Open **PowerShell as Administrator** and run:
 
@@ -47,7 +37,7 @@ wsl --update
 
 ---
 
-# 4. Install Ubuntu in WSL
+# 3. Install Ubuntu in WSL
 
 In **PowerShell (Administrator)** run:
 
@@ -56,26 +46,27 @@ wsl --install -d Ubuntu
 ```
 
 When prompted:
-Create a Unix username (example: office)
-Create a password (example: 0)
+
+Create a Unix username (example: `office`)
+Create a password (example: `0`)
 
 ---
 
-# 5. Enable Docker Integration with WSL
+# 4. Enable Docker Integration with WSL
 
-Open **Docker Desktop**.
+Open **Docker Desktop**
 
 Go to:
 
 Settings → Resources → WSL Integration
 
-Enable toggle named Ubuntu
+Enable the toggle named **Ubuntu**
 
-Click: Apply & Restart
+Click **Apply & Restart**
 
 ---
 
-# 6. Give Docker Permission in Ubuntu
+# 5. Give Docker Permission in Ubuntu
 
 Open the **Ubuntu terminal** and run:
 
@@ -83,31 +74,32 @@ Open the **Ubuntu terminal** and run:
 sudo usermod -aG docker $USER
 ```
 
-Restart WSL(In PowerShell):
+Restart WSL from PowerShell:
 
 ```powershell
 wsl --shutdown
 ```
 
-Then open Ubuntu again using: wsl
+Then open Ubuntu again:
+
+```powershell
+wsl
+```
 
 ---
 
-# 7. Install VSCode and Dev Containers Extension
+# 6. Clone the Repository in WSL
 
-Install **Visual Studio Code** if not already installed.
+Inside the **Ubuntu terminal** run:
 
-Install the extension:
-
+```bash
+git clone https://github.com/zHealthRobotics/POC_arm.git
+cd POC_arm
 ```
-Dev Containers
-```
-
-Now open the **POC_arm folder** in VSCode.
 
 ---
 
-# 8. Install USB Passthrough Tool
+# 7. Install USB Passthrough Tool
 
 Open **PowerShell as Administrator** and install usbipd:
 
@@ -123,7 +115,7 @@ usbipd --version
 
 ---
 
-# 9. Attach the USB Device to WSL
+# 8. Attach the USB Device to WSL
 
 Connect the **USB-C cable** to your device.
 
@@ -133,10 +125,13 @@ List connected USB devices:
 usbipd list
 ```
 
-Example output:
+Example output may show something like:
 
+```
 USB-Enhanced-SERIAL CH343 (COM5)
 BUSID: 2-3
+```
+
 Remember the **BUSID**.
 
 Bind the device:
@@ -159,7 +154,7 @@ usbipd list
 
 ---
 
-# 10. Verify Serial Device in WSL
+# 9. Verify Serial Device in WSL
 
 Open the Ubuntu terminal:
 
@@ -180,21 +175,28 @@ ls /dev/ttyACM*
 ```
 
 You should see something like:
+
+```
 /dev/ttyACM0
+```
+
 or
+
+```
 /dev/ttyUSB0
+```
 
 ---
 
-# 11. Enable Device in Docker
+# 10. Verify Device Mapping in Docker
 
-Open:
+Open the file:
 
 ```
 docker-compose.yml
 ```
 
-Uncomment the **devices section** and set the correct serial device.
+Verify that the **devices section contains the correct serial device**.
 
 Example:
 
@@ -203,33 +205,36 @@ devices:
   - /dev/ttyACM0:/dev/ttyACM0
 ```
 
+If your device appears as `/dev/ttyUSB0` or another name in WSL, update the mapping accordingly.
+
+Example:
+
+```
+devices:
+  - /dev/ttyUSB0:/dev/ttyUSB0
+```
+
 ---
 
-# 12. Rebuild the Dev Container
+# 11. Start the Docker Container
 
-In **VSCode** press:
-
-```
-Ctrl + Shift + P
-```
-
-Run:
-
-```
-Dev Containers: Rebuild and Reopen Container
-```
-
-After the container starts, open a terminal and verify the device:
+Inside the repository directory run:
 
 ```bash
-ls -l /dev/ttyACM*
+./start_container.sh
 ```
+
+This will:
+
+* Build the Docker image
+* Start the container
+* Enter the ROS2 workspace environment
 
 ---
 
-# 13. Build the ROS2 Workspace
+# 12. Build the ROS2 Workspace
 
-Inside the container terminal:
+Inside the container terminal run:
 
 ```bash
 colcon build
@@ -243,9 +248,16 @@ source install/setup.bash
 
 ---
 
-# 14. Set Servo ID
+# 13. Check Servo ID
 
-Run:
+```bash
+cd src
+python3 check_id.py
+```
+
+---
+
+# 14. Set Servo ID
 
 ```bash
 ros2 run waveshare_servos set_id --ros-args -p start_id:=1 -p new_id:=2
@@ -253,27 +265,9 @@ ros2 run waveshare_servos set_id --ros-args -p start_id:=1 -p new_id:=2
 
 ---
 
-# 15. Check Servo ID
-
-Navigate to the source directory:
-
-```bash
-cd src
-```
-
-Run:
-
-```bash
-python3 check_id.py
-```
-
----
-
-# 16. Set All Servo Positions to Zero
+# 15. Set All Servo Positions to Zero
 
 ```bash
 cd src
 python3 servo.py
 ```
-
----
