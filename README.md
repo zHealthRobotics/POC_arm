@@ -271,3 +271,27 @@ ros2 run waveshare_servos set_id --ros-args -p start_id:=1 -p new_id:=2
 cd src
 python3 servo.py
 ```
+---
+
+# 16. Start the Robot Control System
+
+Inside the **Docker container terminal**, navigate to the ROS2 workspace and ensure it is built and sourced.
+
+First build the workspace:
+
+```bash
+colcon build
+```
+
+Source the workspace:
+
+```bash
+source install/setup.bash
+```
+
+Then launch the MoveIt control system:
+
+```bash
+ros2 launch poc_v2_moveit moveit_poc.launch.py
+```
+---
