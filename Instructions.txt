@@ -1,0 +1,7 @@
+1.) Open docker desktop and start docker.
+2.) Connect the motor driver to laptop, then open powershell as administrator and follow step 8 to bind and attach busid.
+3.) Follow step 9 to verify the port. (should be /dev/ttyACM0, if anything else, then must have to change in docker-compose.yml (refer step 10)).
+4.) Then in powershell, type:wsl ,then inside wsl, type: cd POC_arm, then follow step 11 to open container.
+5.) Follow step 12 to build and source the workspace.
+6.) You can follow step 13 and 15 to verify all servo ids are present and currently at 0.
+7.) Then type: cd..  to go back to ros2_ws and lastly follow step 16. This will launch moveit launch file and then you can try out some poses.
